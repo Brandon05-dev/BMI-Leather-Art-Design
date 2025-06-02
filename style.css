@@ -307,6 +307,8 @@ p {
     width: 450px;
     height: auto;
     margin-top: 50px;
+    width: 100%;
+    max-width: 450px;
 }
 
 .shoe-image.fade {
@@ -555,6 +557,25 @@ progress {
 .white-section {
   background-color: #f8f8f8;
   padding: 30px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .text-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .shoe-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
 
         /* === General About Us Styling === */
