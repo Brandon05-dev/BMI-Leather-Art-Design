@@ -196,15 +196,16 @@ nav a.active {
 }
 
 .text-container {
-    max-width: 500px;
+    max-width: 300px;
     margin-right: 80px;
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 2rem;
     color: white;
     line-height: 1.1;
     margin-bottom: 20px;
+  
 }
 
 h1 span {
@@ -331,6 +332,8 @@ p {
     display: flex;
     gap: 20px;
     animation: scrollHorizontal 10s linear infinite;
+    margin-left: -10px; /* Adjust value as needed */
+    transform: translateX(-10px); /* Adjust the value */
 }
 
 .product-icons-wrapper:hover .animated-icons {
