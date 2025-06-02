@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home | BMI Leather Art and Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-content">
+    <img src="bmi-logo.jpg" alt="BMI Logo" class="preloader-logo">
+    <p class="tagline"><span id="typed-text"></span><span class="cursor">|</span></p>
+  </div>
+</div>
+
+
+    <header>
+        <div class="logo">
+        <a href="index.html" style="text-decoration: none;">
+            <h2 class="logo" style="display: flex; align-items: center; font-family: 'Georgia', serif; font-weight: bold; font-size: 24px; color: #4b2e2e;">
+            <img src="bmi-logo.jpg" alt="BMI Logo" style="height: 45px; margin-right: 12px; border-radius: 5px;">
+            <span style="display: flex; flex-direction: column; line-height: 1.2;">
+           <span style="font-style: italic; color: goldenrod;">BMI Leather</span>
+           <span style="font-size: 14px; font-weight: normal; color: whitesmoke;">Art & Design</span>
+           </span>
+            </h2>
+        </a>
+        </div> 
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="navbar">
+            <ul>
+                <li><a Home href="index.html"class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="order.html">Order Now</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+         <div class="text-container">
+            <h1>LEATHER<br><span>ACCESSORIES</span></h1>
+            <P>Proudly handcrafted in Kenya, our leather accessories are designed to express timeless elegance, enduring quality, and your unique story. Experience the perfect blend of style, strength, and heritage one piece at a time.</P> 
+
+    <!-- Add animated products text here -->
+  <div class="animated-products">
+  <h2>Our products are:</h2>
+  <div class="product-carousel">
+    <div class="product-text">BMI Leather Wallets</div>
+    <div class="product-text">Beaded leather sandals</div>
+    <div class="product-text">Customized leather seat</div>
+    <div class="product-text">Leather key holder</div>
+    <div class="product-text">Dog Holster</div>
+    <div class="product-text">Gladiator sandals</div>
+    <div class="product-text">Customized leather bag</div>
+    <div class="product-text">BMI Tablet holder</div>
+    <div class="product-text">Leather watchstraps</div>
+    <div class="product-text">Leather belts</div>
+  </div>
+</div>
+
+  <!-- Shop Now Button -->
+             <a href="order.html" class="button" >Shop Now</a>
+    </div>
+
+ <div class="image-container">
+    <img src="1.jpg" alt="Leather Accessories" class="hero-image shoe-image">
+
+    <!-- Animated scrollable icon container -->
+    <div class="product-icons-wrapper">
+        <div class="product-icons animated-icons">
+            <div class="icon active" data-shoe="1"><img src="1.jpg" alt="Shoe 1"></div>
+            <div class="icon" data-shoe="2"><img src="2.jpg" alt="Shoe 2"></div>
+            <div class="icon" data-shoe="3"><img src="3.jpg" alt="Shoe 3"></div>
+            <div class="icon" data-shoe="4"><img src="4.jpg" alt="Shoe 4"></div>
+        </div>
+    </div>
+</div>
+
+
+<a href="product.html">
+    <div class="more-button">
+        <span>More</span>
+        <div class="arrow"></div>
+    </div>
+</a>
+    </section>
+
+
+    
+    <section class="features">
+  <div class="feature">
+    <h2><i class="fas fa-hammer"></i> Handcrafted Quality</h2>
+    <p>Each piece is meticulously crafted by skilled artisans, ensuring durability and style.</p>
+  </div>
+  <div class="feature">
+    <h2><i class="fas fa-recycle"></i> Sustainable Materials</h2>
+    <p>We use ethically sourced leather, promoting sustainability and supporting local communities.</p>
+  </div>
+  <div class="feature">
+    <h2><i class="fas fa-palette"></i> Custom Designs</h2>
+    <p>Personalize your leather goods with custom designs that reflect your unique style.</p>
+  </div>
+</section> <!-- ✅ Close features section here -->
+
+<section id="contact" class="white-section">
+  <h2><i class="fas fa-comments"></i> Chat with us</h2>
+  <p style="color: black;">
+  Have questions or need assistance?<br>
+  We're here to help! Click the button below to start a chat with us on WhatsApp.
+</p>
+  <a class="whatsapp-button" href="https://wa.me/254707702773?text=Hello%20BMI%20Leather">Chat on WhatsApp</a>
+</section>
+
+
+<!-- ✅ Final Footer -->
+<footer class="footer">
+  <div class="footer-socials">
+    <a href="https://www.facebook.com/bmileather" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank"><i class="fab fa-threads"></i></a>
+    <a href="https://wa.me/254707702773" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p class="footer-text">&copy; <span id="currentYear"></span> 2025 BMI Leather Art and Design. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("show");
+  }
+
+  // splash screen
+  window.addEventListener("load", () => {
+    const text = "Crafting elegance, one stitch at a time";
+    const typedText = document.getElementById("typed-text");
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 50); // Speed of typing
+      }
+    }
+
+    // Start typing
+    type();
+
+    // Hide preloader after 4 seconds max
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = '0';
+      preloader.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => preloader.style.display = 'none', 500);
+    }, 4000);
+  });
+</script>
+
+</body>
+</html>
+

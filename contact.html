@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | BMI Leather Art and Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+        <a href="index.html" style="text-decoration: none;">
+            <h2 class="logo" style="display: flex; align-items: center; font-family: 'Georgia', serif; font-weight: bold; font-size: 24px; color: #4b2e2e;">
+            <img src="bmi-logo.jpg" alt="BMI Logo" style="height: 45px; margin-right: 12px; border-radius: 5px;">
+            <span style="display: flex; flex-direction: column; line-height: 1.2;">
+           <span style="font-style: italic; color: goldenrod;">BMI Leather</span>
+           <span style="font-size: 14px; font-weight: normal; color: whitesmoke;">Art & Design</span>
+           </span>
+            </h2>
+        </a>
+        </div> 
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="navbar">
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="about.html">About Us</a></li>
+               <li><a href="product.html">Products</a></li>
+               <li><a href="order.html">Order Now</a></li>
+               <li><a href="services.html">Services</a></li>
+               <li><a href="contact.html"class="active">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contact-container">
+    <h1 class="flip-heading">Contact Us</h1>
+    
+        <div class="contact-info section-spacing">
+            <p class="address-text"><i class="fas fa-map-marker-alt"></i> BMI Leather Art and Design, Nairobi, Kenya</p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:bmileatherartanddesign@gmail.com">bmileatherartanddesign@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> +254 707 702 773</p>
+            <p><i class="fas fa-clock"></i> Mon – Sat: 24hrs</p>
+        </div>
+
+    <h2 class="form-heading">Send Us a Message.</h2>
+        <form class="contact-form section-spacing" action="mailto:info@bmileather.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+
+        <div class="social-links section-spacing">
+            <a href="https://www.facebook.com/bmileather" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank"><i class="fab fa-instagram"></i></a>
+           <a href="https://www.threads.com/@bmi_leather_art_and_design?invite=0" target="_blank"><i class="fab fa-threads"></i></a>
+        </div>
+
+        <div class="map section-spacing">
+            <h2 class="map-heading">
+               <i class="fas fa-map-marker-alt red-icon"></i> Find us on the map
+           </h2>
+            <iframe 
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.05468943663!2d36.8238908697754!3d-1.2855361000000116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11b2b0dfffa1%3A0xedff1a532fd2876!2sBMI%20LEATHER%20ART%20AND%20DESIGN!5e0!3m2!1sen!2ske!4v1717073502577!5m2!1sen!2ske" 
+               width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" 
+               referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <p class="map p">We are located in Nairobi, Kenya. Visit us or send us a message!</p>
+        </div>
+    </div>
+    <div class="section-spacing">
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/bmileather" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank"><i class="fab fa-threads"></i></a>
+        <a href="https://wa.me/254707702773" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p class="footer-text">&copy; <span id="currentYear"></span>2025 BMI Leather Art and Design. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+    
+    <script>
+    document.querySelector('.contact-form').addEventListener('submit', function(event) {
+        const name = this.name.value.trim();
+        const email = this.email.value.trim();
+        const subject = this.subject.value.trim();
+        const message = this.message.value.trim();
+
+        if (!name || !email || !subject || !message) {
+            alert('Please fill out all fields.');
+            event.preventDefault();
+        } else {
+            alert('Thank you for your message!');
+        }
+    });
+    
+    // splash screen
+     window.addEventListener("load", () => {
+    const text = "Crafting elegance, one stitch at a time";
+    const typedText = document.getElementById("typed-text");
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 50); // Speed of typing
+      }
+    }
+
+    // Start typing
+    type();
+
+    // Hide preloader after 4 seconds max
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = '0';
+      preloader.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => preloader.style.display = 'none', 500);
+    }, 4000);
+  });
+
+    </script>
+
+    <script>
+  function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>
+

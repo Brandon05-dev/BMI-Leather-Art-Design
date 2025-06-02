@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore our range of handcrafted leather services tailored to meet your needs.">
+  <title>Services | BMI Leather Art</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <header>
+   <div class="logo">
+        <a href="index.html" style="text-decoration: none;">
+            <h2 class="logo" style="display: flex; align-items: center; font-family: 'Georgia', serif; font-weight: bold; font-size: 24px; color: #4b2e2e;">
+            <img src="bmi-logo.jpg" alt="BMI Logo" style="height: 45px; margin-right: 12px; border-radius: 5px;">
+            <span style="display: flex; flex-direction: column; line-height: 1.2;">
+           <span style="font-style: italic; color: goldenrod;">BMI Leather</span>
+           <span style="font-size: 14px; font-weight: normal; color: whitesmoke;">Art & Design</span>
+           </span>
+            </h2>
+        </a>
+        </div> 
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="order.html">Order Now</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-section">
+    <h1 class="flip-heading">What We Offer</h1>
+    <h3>Explore our range of handcrafted leather services tailored to meet your needs.</h3>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-tools"></i>
+        <h3>Custom Leather Goods</h3>
+        <p>We craft custom bags, belts, wallets and accessories as per your style.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-hand-holding"></i>
+        <h3>Leather Repairs</h3>
+        <p>Expert restoration of cracked, faded, or damaged leather items.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-pen-nib"></i>
+        <h3>Engraving & Personalization</h3>
+        <p>Get names, initials, or special messages engraved on your items.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-calendar-alt"></i>
+        <h3>Consultation</h3>
+        <p>Need something unique? Book a one-on-one design consultation.</p>
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+  <a href="order.html" class="btn order">
+    <i class="fas fa-shopping-cart"></i> Order Now
+  </a>
+  <a href="contact.html" class="btn contact">
+    <i class="fas fa-envelope"></i> Contact Us
+  </a>
+  <a href="contact.html" class="btn consult">
+    <i class="fas fa-calendar-check"></i> Schedule a Consultation
+  </a>
+</div>
+
+  </section>
+
+  <section class="why-choose-us">
+    <h2>Why Choose Us</h2>
+    <ul>
+      <li><i class="fas fa-check-circle"></i> 100% handcrafted quality</li>
+      <li><i class="fas fa-check-circle"></i> Premium, ethically sourced leather</li>
+      <li><i class="fas fa-check-circle"></i> Personalized service and design</li>
+      <li><i class="fas fa-check-circle"></i> Experienced artisans</li>
+      <li><i class="fas fa-check-circle"></i> Timely delivery & customer support</li>
+    </ul>
+  </section>
+
+  <section class="faq-section">
+    <h2>Frequently Asked Questions (FAQs)</h2>
+    <div class="faq-item">
+      <h4>i) How long does a custom order take?</h4>
+      <p>Typically 5–10 business days, depending on the complexity.</p>
+    </div>
+    <div class="faq-item">
+      <h4>ii) Can I return a customized product?</h4>
+      <p>Customized items are not returnable unless there's a defect. Contact us within 7 days.</p>
+    </div>
+    <div class="faq-item">
+      <h4>iii) Do you offer bulk or corporate orders?</h4>
+      <p>Yes, we handle bulk orders for gifts, events, or branding. Contact us for a quote.</p>
+    </div>
+    <div class="faq-item">
+      <h4>iv) What leather do you use?</h4>
+      <p>We use premium, ethically sourced cowhide and goatskin leather.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/bmileather" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank"><i class="fab fa-threads"></i></a>
+        <a href="https://wa.me/254707702773" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p class="footer-text">&copy; <span id="currentYear">2025</span> BMI Leather Art and Design. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+  function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("show");
+  }
+
+    // splash screen
+   window.addEventListener("load", () => {
+    const text = "Crafting elegance, one stitch at a time";
+    const typedText = document.getElementById("typed-text");
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 50); // Speed of typing
+      }
+    }
+
+    // Start typing
+    type();
+
+    // Hide preloader after 4 seconds max
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = '0';
+      preloader.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => preloader.style.display = 'none', 500);
+    }, 4000);
+  });
+  </script>
+</body>
+</html>

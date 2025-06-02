@@ -1,0 +1,112 @@
+/* About Us Page Specific Styles */
+
+.page-section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+}
+
+.page-section h1,
+.page-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-section h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.page-section h2 {
+    font-size: 24px;
+    color: #555;
+}
+
+.page-section p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 0 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.carousel-slide p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.carousel-slide .rating i {
+    color: #f5b301;
+}
+
+.carousel-slide .author {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50%;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.button {
+    display: block;
+    width: fit-content;
+    margin: 40px auto;
+    padding: 12px 25px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: #444;
+}
+
