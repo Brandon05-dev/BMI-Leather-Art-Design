@@ -43,8 +43,30 @@
 <ul id="cart-list"></ul>
 <p><strong>Total:</strong> KES <span id="cart-total">0</span></p>
 <a href="#" id="whatsapp-link" class="whatsapp" target="_blank">Confirm Order on WhatsApp</a>
-
 </div>
+
+<!-- Category Dropdown & Search Bar -->
+<div class="order-controls">
+  <select id="categoryDropdown" onchange="filterByCategory()">
+    <option value="all">All Categories</option>
+    <option value="bmi-sandals">BMI Leather Sandals</option>
+    <option value="leather-holster">BMI Leather Holsters</option>
+    <option value="leather-wallet">BMI Leather Wallets</option>
+    <option value="bmi-fashion">BMI Fashion</option>
+    <option value="leather-seat">BMI Leather Seats</option>
+    <option value="leather-bag">BMI Leather Bags</option>
+    <option value="bmi-material">BMI Leather Materials</option>
+    <!-- Add more as needed -->
+  </select>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search for BMI products" oninput="searchProducts()">
+    <button onclick="searchProducts()">
+      🔍
+    </button>
+  </div>
+</div>
+
 
   <div class="container">
     <!-- Repeat this section for each category -->
@@ -53,335 +75,621 @@
       <div class="products">
         
         <!-- Repeat product cards -->
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/1.jpg" alt="BMI Leather Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>BMI Leather Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('BMI Leather Sandals', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card bmi-sandals">
+          <img src="img/55.jpg" alt="BMI Leather Sandals">
+          <div class="product-info">
+            <h3>BMI Leather Sandals</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('BMI Leather Sandals', 1500)">Add to Cart</button>
         </div>
 
         <!-- More cards -->
-         <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+         <div class="product-card bmi-sandals">
+          <img src="img/2.jpg" alt="Ladies Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Ladies Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Ladies Sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/3.jpg" alt="Mens Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Mens Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Mens Sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/4.jpg" alt="Kids Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Kids Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Kids Sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="2.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/5.jpg" alt="Premium Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Premium Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Premium Sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/6.jpg" alt="Judas Ladies Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Judas Ladies Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Judas Ladies Sandals', 1500)">Add to Cart</button>
         </div>
         <!-- Repeat product cards -->
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/7.jpg" alt="Judas Mens Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Judas Mens Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Judas Mens Sandals', 1500)">Add to Cart</button>
         </div>
         <!-- More cards -->
-         <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+         <div class="product-card bmi-sandals">
+          <img src="img/8.jpg" alt="Beaded Leather Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Beaded Leather Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Beaded Leather Sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/51.jpg" alt="Beaded Leather Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Beaded Leather Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Beaded Leather Sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/52.jpg" alt="Beaded Leather Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Beaded Leather Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Beaded Leather Sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/53.jpg" alt="Beaded Leather Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Beaded Leather Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Beaded Leather Sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/54.jpg" alt="Beaded Leather Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Beaded Leather Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Beaded Leather Sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/9.jpg" alt="BMI Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>BMI Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('BMI Sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/10.jpg" alt="Leather Gladiator">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Leather Gladiator</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Leather Gladiator', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/11.jpg" alt="Leather Sandala">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Leather Sandala</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Leather Sandala', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/12.jpg" alt="Classic Leather Sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Classic Leather Sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Classic Leather Sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-sandals">
+          <img src="img/13.jpg" alt="Full Grain Leather sandals">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Full Grain Leather sandals</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Full Grain Leather sandals', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card leather-holster">
+          <img src="img/14.jpg" alt="Leather Pen Holder">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Leather Pen Holder</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Leather Pen Holder', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card leather-holster">
+          <img src="img/15.jpg" alt="High Quality Wine Holster">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>High Quality Wine Holster</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('High Quality Wine Holster', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card leather-holster">
+          <img src="img/16.jpg" alt="Leather Dog Holster">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Leather Dog Holster</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Leather Dog Holster', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card leather-holster">
+          <img src="img/17.jpg" alt="Leather Camera Strap">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Leather Camera Strap</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Leather Camera Strap', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card leather-holster">
+          <img src="img/18.jpg" alt="Dog Holster">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Dog Holster</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Dog Holster', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card leather-wallet">
+          <img src="img/19.jpg" alt="ID Leather Wallet">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>ID Leather Wallet</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('ID Leather Wallet', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card leather-wallet">
+          <img src="img/20.jpg" alt="Money Clip Leather Wallet">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Money Clip Leather Wallet</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Money Clip Leather Wallet', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card leather-wallet">
+          <img src="img/21.jpg" alt="Passport Leather Wallet">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Passport Leather Wallet</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Passport Leather Wallet', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card leather-wallet">
+          <img src="img/22.jpg" alt="Credit cards Leather Wallet">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Credit cards Leather Wallet</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Credit cards Leather Wallet', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-fashion">
+          <img src="img/23.jpg" alt="Leather Watch Strap">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Leather Watch Strap</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Leather Watch Strap', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-fashion">
+          <img src="img/24.jpg" alt="Leather Key Holder">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Leather Key Holder</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Leather Key Holder', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-fashion">
+          <img src="img/25.jpg" alt="BMI Leather Clock">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>BMI Leather Clock</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('BMI Leather Clock', 1500)">Add to Cart</button>
         </div>
 
-        <div class="product-card">
-          <img src="1.jpg" alt="Leather Wallet">
+        <div class="product-card bmi-fashion">
+          <img src="img/50.jpg" alt="Leather Key Holder">
           <div class="product-info">
-            <h3>Leather Wallet</h3>
+            <h3>Leather Key Holder</h3>
             <p>Available Colors: Black, Brown</p>
             <p>Qty Left: 15</p>
             <p>Price: KES 1500</p>
           </div>
-          <button onclick="addToCart('Leather Wallet', 1500)">Add to Cart</button>
+          <button onclick="addToCart('Leather Key Holder', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card bmi-fashion">
+          <img src="img/26.jpg" alt="Leather Bracelet">
+          <div class="product-info">
+            <h3>Leather Bracelet</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Leather Bracelet', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card bmi-fashion">
+          <img src="img/27.jpg" alt="Leather Hand Cuffs">
+          <div class="product-info">
+            <h3>Leather Hand Cuffs</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Leather Hand Cuffs', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card bmi-fashion">
+          <img src="img/28.jpg" alt="Leather Leg Cuffs">
+          <div class="product-info">
+            <h3>Leather Leg Cuffs</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Leather Leg Cuffs', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card bmi-fashion">
+          <img src="img/29.jpg" alt="Leather Phone Case">
+          <div class="product-info">
+            <h3>Leather Phone Case</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Leather Phone Case', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card bmi-fashion">
+          <img src="img/30.jpg" alt="Leather Tablet Case">
+          <div class="product-info">
+            <h3>Leather Tablet Case</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Leather Tablet Case', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card bmi-fashion">
+          <img src="img/31.jpg" alt="Leather Belt">
+          <div class="product-info">
+            <h3>Leather Belt</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Leather Belt', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card bmi-fashion">
+          <img src="img/32.jpg" alt="Leather Cap">
+          <div class="product-info">
+            <h3>Leather Cap</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Leather Cap', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card bmi-fashion">
+          <img src="img/33.jpg" alt="Full Grain Leather Strap">
+          <div class="product-info">
+            <h3>Full Grain Leather Strap</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Full Grain Leather Strap', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-seat">
+          <img src="img/34.jpg" alt="Customized Leather Seats">
+          <div class="product-info">
+            <h3>Customized Leather Seats</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Customized Leather Seats', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-seat">
+          <img src="img/35.jpg" alt="BMI Leather Car set">
+          <div class="product-info">
+            <h3>BMI Leather Car set</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('BMI Leather Car set', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-seat">
+          <img src="img/36.jpg" alt="BMI Leather Normal Seats">
+          <div class="product-info">
+            <h3>BMI Leather Normal Seats</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('BMI Leather Normal Seats', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/37.jpg" alt="Leather Travel Bag">
+          <div class="product-info">
+            <h3>Leather Travel Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Leather Travel Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/38.jpg" alt="Sling Leather Bag">
+          <div class="product-info">
+            <h3>Sling Leather Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Sling Leather Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/45.jpg" alt="Sling Leather Bag">
+          <div class="product-info">
+            <h3>Sling Leather Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Sling Leather Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/46.jpg" alt="Sling Leather Bag">
+          <div class="product-info">
+            <h3>Sling Leather Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Sling Leather Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/47.jpg" alt="Sling Leather Bag">
+          <div class="product-info">
+            <h3>Sling Leather Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Sling Leather Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/48.jpg" alt="Sling Leather Bag">
+          <div class="product-info">
+            <h3>Sling Leather Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Sling Leather Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/49.jpg" alt="Sling Leather Bag">
+          <div class="product-info">
+            <h3>Sling Leather Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Sling Leather Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/39.jpg" alt="Mens Leather Bag">
+          <div class="product-info">
+            <h3>Mens Leather Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Mens Leather Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/40.jpg" alt="Ladies Leather Bag">
+          <div class="product-info">
+            <h3>Ladies Leather Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Ladies Leather Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/56.jpg" alt="Ladies Leather Bag">
+          <div class="product-info">
+            <h3>Ladies Leather Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Ladies Leather Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/41.jpg" alt="BMI Leather School Bag">
+          <div class="product-info">
+            <h3>BMI Leather School Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('BMI Leather School Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card leather-bag">
+          <img src="img/42.jpg" alt="Customized Leather Bag">
+          <div class="product-info">
+            <h3>Customized Leather Bag</h3>
+            <p>Available Colors: Black, Brown</p>
+            <p>Qty Left: 15</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Customized Leather Bag', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card bmi-material">
+          <img src="img/43.jpg" alt="Cow Leather">
+          <div class="product-info">
+            <h3>Cow Leather</h3>
+            <p>Available Colors: Black, white, Brown</p>
+            <p>Qty Left: 3</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('Cow Leather', 1500)">Add to Cart</button>
+        </div>
+
+        <div class="product-card bmi-material">
+          <img src="img/44.jpg" alt="BMI Oyster Leather">
+          <div class="product-info">
+            <h3>BMI Oyster Leather</h3>
+            <p>Available Colors: Black, Brown, white</p>
+            <p>Qty Left: 5</p>
+            <p>Price: KES 1500</p>
+          </div>
+          <button onclick="addToCart('BMI Oyster Leather', 1500)">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -504,8 +812,30 @@
     }, 4000);
   });
 
+  // Search functionality and category filter
+  function filterByCategory() {
+  const selectedCategory = document.getElementById("categoryDropdown").value;
+  const allProducts = document.querySelectorAll(".product-card");
+
+  allProducts.forEach(product => {
+    if (selectedCategory === "all" || product.classList.contains(selectedCategory)) {
+      product.style.display = "flex";
+    } else {
+      product.style.display = "none";
+    }
+  });
+}
+
+function searchProducts() {
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const allProducts = document.querySelectorAll(".product-card");
+
+  allProducts.forEach(product => {
+    const text = product.innerText.toLowerCase();
+    product.style.display = text.includes(query) ? "flex" : "none";
+  });
+}
 </script>
-
-
 </body>
 </html>
+
