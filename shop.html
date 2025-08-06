@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Premium Handcrafted Leather Accessories | BMI Leather Art & Design</title>
+    <meta name="description" content="Browse our curated collection of handcrafted leather accessories. Premium belts, wallets, bags, and custom leather goods made in Kenya. Shop with confidence and track your orders.">
+    <meta name="keywords" content="handcrafted leather accessories, premium leather goods, leather belts, leather wallets, leather bags, custom leather, Kenya leather artisan, order tracking">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "BMI Leather Art & Design",
+        "description": "Premium handcrafted leather accessories store offering belts, wallets, bags, and custom leather goods with order tracking.",
+        "url": "https://bmileatherart.com/shop",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Leather Accessories",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Handcrafted Leather Accessories",
+                        "category": "Fashion Accessories"
+                    }
+                }
+            ]
+        },
+        "paymentAccepted": ["M-Pesa", "Credit Card", "Bank Transfer"],
+        "currenciesAccepted": "KES",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://bmileatherart.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Shop",
+                    "item": "https://bmileatherart.com/shop"
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="stylesheet" href="ecommerce.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index-new.html" class="logo-link">
+                    <img src="bmi-logo.jpg" alt="BMI Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="brand-name">BMI Leather</span>
+                        <span class="brand-tagline">Art & Design</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="index-new.html" class="nav-link">Home</a></li>
+                    <li><a href="index-new.html#about" class="nav-link">About</a></li>
+                                        <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                    <li><a href="services-new.html" class="nav-link">Services</a></li>
+                    <li><a href="index-new.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount"></span>
+                </div>
+                
+                <button class="wishlist-icon" id="wishlistIcon">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count" id="wishlistCount"></span>
+                </button>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index-new.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Shop</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Hero -->
+    <section class="shop-hero">
+        <div class="container">
+            <div class="shop-hero-content">
+                <h1 class="page-title">Premium Handcrafted Collection</h1>
+                <p class="page-subtitle">Discover our curated selection of authentic leather accessories, each piece crafted with precision and passion in our Kenyan workshop.</p>
+                
+                <div class="shop-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalProducts">50+</span>
+                        <span class="stat-label">Unique Products</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Handcrafted</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+                
+                <div class="shop-actions">
+                    <a href="order-tracking.html" class="btn-secondary track-order-btn">
+                        <i class="fas fa-search"></i>
+                        Track Your Order
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Content -->
+    <section class="shop-content">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="shop-filters">
+                    <div class="filters-header">
+                        <h3>Filter Products</h3>
+                        <button class="clear-filters" id="clearFilters">Clear All</button>
+                    </div>
+                    
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Categories</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="all" checked>
+                                <span class="checkmark"></span>
+                                All Products <span class="count" id="countAll">(50)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="belts">
+                                <span class="checkmark"></span>
+                                Belts <span class="count" id="countBelts">(12)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="wallets">
+                                <span class="checkmark"></span>
+                                Wallets <span class="count" id="countWallets">(8)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="bags">
+                                <span class="checkmark"></span>
+                                Bags <span class="count" id="countBags">(15)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="accessories">
+                                <span class="checkmark"></span>
+                                Accessories <span class="count" id="countAccessories">(10)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="sandals">
+                                <span class="checkmark"></span>
+                                Sandals <span class="count" id="countSandals">(5)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Price Range (KES)</h4>
+                        <div class="price-range">
+                            <input type="range" id="priceMin" min="500" max="10000" value="500" class="price-slider">
+                            <input type="range" id="priceMax" min="500" max="10000" value="10000" class="price-slider">
+                            <div class="price-inputs">
+                                <input type="number" id="priceMinInput" min="500" max="10000" value="500" placeholder="Min">
+                                <span>to</span>
+                                <input type="number" id="priceMaxInput" min="500" max="10000" value="10000" placeholder="Max">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Colors</h4>
+                        <div class="color-options">
+                            <label class="color-option">
+                                <input type="checkbox" name="color" value="black">
+                                <span class="color-swatch" style="background-color: #2c2c2c;"></span>
+                                Black
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox" name="color" value="brown">
+                                <span class="color-swatch" style="background-color: #8b4513;"></span>
+                                Brown
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox" name="color" value="tan">
+                                <span class="color-swatch" style="background-color: #d2b48c;"></span>
+                                Tan
+                            </label>
+                            <label class="color-option">
+                                <input type="checkbox" name="color" value="cognac">
+                                <span class="color-swatch" style="background-color: #9f4f07;"></span>
+                                Cognac
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Material Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Material</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="material" value="full-grain">
+                                <span class="checkmark"></span>
+                                Full Grain Leather
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="material" value="top-grain">
+                                <span class="checkmark"></span>
+                                Top Grain Leather
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="material" value="cowhide">
+                                <span class="checkmark"></span>
+                                Cowhide
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="material" value="exotic">
+                                <span class="checkmark"></span>
+                                Exotic Leather
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Availability Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Availability</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="availability" value="in-stock" checked>
+                                <span class="checkmark"></span>
+                                In Stock
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="availability" value="custom-order">
+                                <span class="checkmark"></span>
+                                Custom Order
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Products Area -->
+                <main class="products-area">
+                    <!-- Toolbar -->
+                    <div class="products-toolbar">
+                        <div class="toolbar-left">
+                            <span class="results-count">Showing <span id="resultCount">50</span> products</span>
+                        </div>
+                        
+                        <div class="toolbar-right">
+                            <div class="view-options">
+                                <button class="view-btn active" data-view="grid" title="Grid View">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn" data-view="list" title="List View">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="sort-options">
+                                <select id="sortSelect" class="sort-select">
+                                    <option value="featured">Featured</option>
+                                    <option value="price-low-high">Price: Low to High</option>
+                                    <option value="price-high-low">Price: High to Low</option>
+                                    <option value="name-a-z">Name: A to Z</option>
+                                    <option value="name-z-a">Name: Z to A</option>
+                                    <option value="newest">Newest First</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded here via JavaScript -->
+                    </div>
+
+                    <!-- Load More / Pagination -->
+                    <div class="pagination-container">
+                        <button class="load-more-btn" id="loadMoreBtn">
+                            <i class="fas fa-plus"></i>
+                            Load More Products
+                        </button>
+                        
+                        <div class="pagination" id="pagination">
+                            <!-- Pagination will be generated here -->
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="quick-view-content" id="quickViewContent">
+                <!-- Quick view content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Your cart is empty</p>
+                    <p class="empty-cart-subtitle">Add some beautiful leather pieces!</p>
+                </div>
+            </div>
+            <div class="cart-footer" id="cartFooter" style="display: none;">
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal">KES 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span id="cartShipping">Calculated at checkout</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="cartTotal">KES 0</span>
+                    </div>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-secondary full-width" id="viewCartBtn">View Cart</button>
+                    <button class="btn-primary full-width" id="checkoutBtn">Secure Checkout</button>
+                </div>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure Payment</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-truck"></i>
+                        <span>Free Shipping KES 5000+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Notification Toast -->
+    <div class="notification-toast" id="notificationToast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span class="toast-message">Product added to cart!</span>
+        </div>
+    </div>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Stay Updated</h3>
+                    <p>Get notified about new arrivals, exclusive offers, and leather care tips.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-input">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="bmi-logo.jpg" alt="BMI Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-brand-name">BMI Leather</span>
+                            <span class="footer-brand-tagline">Art & Design</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Crafting exceptional leather goods that blend traditional artisanship with contemporary design, creating timeless pieces for the modern world.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bmileather" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank" class="social-link">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                        <a href="https://wa.me/254707702773" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?category=belts">Belts</a></li>
+                        <li><a href="shop.html?category=wallets">Wallets</a></li>
+                        <li><a href="shop.html?category=bags">Bags</a></li>
+                        <li><a href="shop.html?category=accessories">Accessories</a></li>
+                        <li><a href="shop.html?category=sandals">Sandals</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="#shipping-info">Shipping Info</a></li>
+                        <li><a href="#returns">Returns & Exchanges</a></li>
+                        <li><a href="#size-guide">Size Guide</a></li>
+                        <li><a href="#care-instructions">Care Instructions</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +254 707 702 773</p>
+                        <p><i class="fas fa-envelope"></i> info@bmileatherart.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <h5>We Accept:</h5>
+                        <div class="payment-icons">
+                            <img src="https://via.placeholder.com/40x25/027A3E/FFFFFF?text=MPESA" alt="M-Pesa">
+                            <img src="https://via.placeholder.com/40x25/1434CB/FFFFFF?text=VISA" alt="Visa">
+                            <img src="https://via.placeholder.com/40x25/EB001B/FFFFFF?text=MC" alt="Mastercard">
+                            <img src="https://via.placeholder.com/40x25/003087/FFFFFF?text=PP" alt="PayPal">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 BMI Leather Art & Design. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="scripts-new.js"></script>
+    <script src="shop-new.js"></script>
+</body>
+</html>

@@ -2,139 +2,287 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us | BMI Leather Art and Design</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome CDN -->
+    <title>Contact Us | BMI Leather Art & Design</title>
+    <meta name="description" content="Get in touch with BMI Leather Art & Design. Contact us for custom orders, inquiries, or to learn more about our handcrafted leather products.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-        <a href="index.html" style="text-decoration: none;">
-            <h2 class="logo" style="display: flex; align-items: center; font-family: 'Georgia', serif; font-weight: bold; font-size: 24px; color: #4b2e2e;">
-            <img src="bmi-logo.jpg" alt="BMI Logo" style="height: 45px; margin-right: 12px; border-radius: 5px;">
-            <span style="display: flex; flex-direction: column; line-height: 1.2;">
-           <span style="font-style: italic; color: goldenrod;">BMI Leather</span>
-           <span style="font-size: 14px; font-weight: normal; color: whitesmoke;">Art & Design</span>
-           </span>
-            </h2>
-        </a>
-        </div> 
-
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <nav id="navbar">
-            <ul>
-               <li><a href="index.html">Home</a></li>
-               <li><a href="about.html">About Us</a></li>
-               <li><a href="product.html">Products</a></li>
-               <li><a href="order.html">Order Now</a></li>
-               <li><a href="services.html">Services</a></li>
-               <li><a href="contact.html"class="active">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="contact-container">
-    <h1 class="flip-heading">Contact Us</h1>
-    
-        <div class="contact-info section-spacing">
-            <p class="address-text"><i class="fas fa-map-marker-alt"></i> BMI Leather Art and Design, Nairobi, Kenya</p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:bmileatherartanddesign@gmail.com">bmileatherartanddesign@gmail.com</a></p>
-            <p><i class="fas fa-phone"></i> +254 707 702 773</p>
-            <p><i class="fas fa-clock"></i> Mon – Sat: 24hrs</p>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="bmi-logo.jpg" alt="BMI Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-main">BMI Leather</span>
+                        <span class="logo-sub">Art & Design</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="product.html" class="nav-link">Products</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="order.html" class="nav-link cta-button">Order Now</a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
+    </nav>
 
-    <h2 class="form-heading">Send Us a Message.</h2>
-        <form class="contact-form section-spacing" action="mailto:info@bmileather.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="subject" placeholder="Subject" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-        </form>
-
-        <div class="social-links section-spacing">
-            <a href="https://www.facebook.com/bmileather" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank"><i class="fab fa-instagram"></i></a>
-           <a href="https://www.threads.com/@bmi_leather_art_and_design?invite=0" target="_blank"><i class="fab fa-threads"></i></a>
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fas fa-comments"></i>
+                <span>Let's Connect</span>
+            </div>
+            <h1 class="page-title">Get in Touch</h1>
+            <p class="hero-description">
+                Ready to start your leather journey? We'd love to hear from you. 
+                Whether you have questions, need a custom quote, or want to learn more about our products.
+            </p>
         </div>
+    </section>
 
-        <div class="map section-spacing">
-            <h2 class="map-heading">
-               <i class="fas fa-map-marker-alt red-icon"></i> Find us on the map
-           </h2>
-            <iframe 
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.05468943663!2d36.8238908697754!3d-1.2855361000000116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11b2b0dfffa1%3A0xedff1a532fd2876!2sBMI%20LEATHER%20ART%20AND%20DESIGN!5e0!3m2!1sen!2ske!4v1717073502577!5m2!1sen!2ske" 
-               width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" 
-               referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            <p class="map p">We are located in Nairobi, Kenya. Visit us or send us a message!</p>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info-card">
+                    <h2>Contact Information</h2>
+                    <p class="contact-intro">
+                        We're here to help bring your leather dreams to life. 
+                        Reach out through any of these channels.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Location</h3>
+                                <p>Nairobi, Kenya</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Phone</h3>
+                                <p><a href="tel:+254707702773">+254 707 702 773</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p><a href="mailto:info@bmileather.com">info@bmileather.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Hours</h3>
+                                <p>Mon - Sat: 8:00 AM - 6:00 PM<br>
+                                   Sun: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-contact">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/bmileather" target="_blank" class="social-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank" class="social-link threads">
+                                <i class="fab fa-threads"></i>
+                            </a>
+                            <a href="https://wa.me/254707702773" target="_blank" class="social-link whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-card">
+                    <h2>Send Us a Message</h2>
+                    <form class="contact-form" action="mailto:info@bmileather.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="custom-order">Custom Order</option>
+                                <option value="general-inquiry">General Inquiry</option>
+                                <option value="product-question">Product Question</option>
+                                <option value="collaboration">Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project or inquiry..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary form-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="section-spacing">
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-socials">
-        <a href="https://www.facebook.com/bmileather" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank"><i class="fab fa-threads"></i></a>
-        <a href="https://wa.me/254707702773" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-      <p class="footer-text">&copy; <span id="currentYear"></span>2025 BMI Leather Art and Design. All rights reserved.</p>
-    </div>
-  </footer>
-</div>
-    
-    <script>
-    document.querySelector('.contact-form').addEventListener('submit', function(event) {
-        const name = this.name.value.trim();
-        const email = this.email.value.trim();
-        const subject = this.subject.value.trim();
-        const message = this.message.value.trim();
+    </section>
 
-        if (!name || !email || !subject || !message) {
-            alert('Please fill out all fields.');
-            event.preventDefault();
-        } else {
-            alert('Thank you for your message!');
-        }
-    });
-    
-    // splash screen
-     window.addEventListener("load", () => {
-    const text = "Crafting elegance, one stitch at a time";
-    const typedText = document.getElementById("typed-text");
-    let index = 0;
+    <!-- Quick Contact Methods -->
+    <section class="quick-contact">
+        <div class="container">
+            <h2>Prefer a Quick Chat?</h2>
+            <p>Get instant responses through our preferred communication channels</p>
+            
+            <div class="quick-contact-buttons">
+                <a href="https://wa.me/254707702773?text=Hello%20BMI%20Leather%20-%20I%20have%20a%20question" 
+                   class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp Chat</span>
+                </a>
+                
+                <a href="tel:+254707702773" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i>
+                    <span>Call Us Now</span>
+                </a>
+                
+                <a href="mailto:info@bmileather.com" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    <span>Send Email</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-    function type() {
-      if (index < text.length) {
-        typedText.textContent += text.charAt(index);
-        index++;
-        setTimeout(type, 50); // Speed of typing
-      }
-    }
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="bmi-logo.jpg" alt="BMI Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-main">BMI Leather</span>
+                            <span class="footer-logo-sub">Art & Design</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Crafting premium leather goods with passion, tradition, and modern innovation. 
+                        Experience the beauty of handcrafted excellence.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="product.html">Wallets & Accessories</a></li>
+                        <li><a href="product.html">Footwear</a></li>
+                        <li><a href="product.html">Bags & Cases</a></li>
+                        <li><a href="product.html">Custom Designs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bmileather" target="_blank" class="social-link facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank" class="social-link threads">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                        <a href="https://wa.me/254707702773" target="_blank" class="social-link whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +254 707 702 773</p>
+                        <p><i class="fas fa-envelope"></i> info@bmileather.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2025</span> BMI Leather Art & Design. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    // Start typing
-    type();
-
-    // Hide preloader after 4 seconds max
-    setTimeout(() => {
-      const preloader = document.getElementById("preloader");
-      preloader.style.opacity = '0';
-      preloader.style.transition = 'opacity 0.5s ease';
-      setTimeout(() => preloader.style.display = 'none', 500);
-    }, 4000);
-  });
-
-    </script>
-
-    <script>
-  function toggleMenu() {
-    document.getElementById("navbar").classList.toggle("show");
-  }
-</script>
-
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
-

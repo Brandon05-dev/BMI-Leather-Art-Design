@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | BMI Leather Art & Design</title>
+    <meta name="description" content="Discover detailed information about our premium handcrafted leather products.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="stylesheet" href="ecommerce.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index-new.html" class="logo-link">
+                    <img src="bmi-logo.jpg" alt="BMI Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="brand-name">BMI Leather</span>
+                        <span class="brand-tagline">Art & Design</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="index-new.html" class="nav-link">Home</a></li>
+                    <li><a href="about-new.html" class="nav-link">About</a></li>
+                    <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                    <li><a href="services-new.html" class="nav-link">Services</a></li>
+                    <li><a href="contact-new.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-icon" id="searchIcon" title="Search Products">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="wishlist-icon" id="wishlistIcon" title="Wishlist">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count" id="wishlistCount">0</span>
+                </div>
+                <div class="cart-icon" id="cartIcon" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index-new.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="shop.html">Shop</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="productBreadcrumb">Product</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail-section">
+        <div class="container">
+            <div class="product-detail-container">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img id="mainProductImage" src="" alt="Product Image" class="main-product-image">
+                        <div class="image-zoom-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="product-badges" id="productBadges">
+                            <!-- Badges will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="thumbnail-images" id="thumbnailImages">
+                        <!-- Thumbnails will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Product Information -->
+                <div class="product-info">
+                    <div class="product-header">
+                        <h1 id="productTitle" class="product-title">Loading...</h1>
+                        <div class="product-rating">
+                            <div class="stars" id="productStars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text" id="ratingText">(5.0) 24 reviews</span>
+                        </div>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="current-price" id="currentPrice">KES 0</span>
+                        <span class="original-price" id="originalPrice" style="display: none;">KES 0</span>
+                        <span class="discount-badge" id="discountBadge" style="display: none;">0% OFF</span>
+                    </div>
+
+                    <div class="product-description">
+                        <p id="productDescription">Loading product description...</p>
+                    </div>
+
+                    <!-- Product Options -->
+                    <div class="product-options">
+                        <div class="option-group" id="colorOptions" style="display: none;">
+                            <label class="option-label">Color:</label>
+                            <div class="color-options">
+                                <!-- Color options will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="option-group" id="sizeOptions" style="display: none;">
+                            <label class="option-label">Size:</label>
+                            <div class="size-options">
+                                <!-- Size options will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label class="option-label">Quantity:</label>
+                            <div class="quantity-selector">
+                                <button type="button" class="qty-btn" id="decreaseQty">-</button>
+                                <input type="number" id="quantity" value="1" min="1" max="10">
+                                <button type="button" class="qty-btn" id="increaseQty">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Actions -->
+                    <div class="product-actions">
+                        <button class="btn-primary btn-large" id="addToCartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                        <button class="btn-wishlist" id="addToWishlistBtn">
+                            <i class="far fa-heart"></i>
+                            Add to Wishlist
+                        </button>
+                        <button class="btn-secondary btn-large" id="buyNowBtn">
+                            Buy Now
+                        </button>
+                    </div>
+
+                    <!-- Product Features -->
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <i class="fas fa-truck"></i>
+                            <div class="feature-text">
+                                <strong>Free Shipping</strong>
+                                <span>On orders over KES 5,000</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="feature-text">
+                                <strong>Quality Guarantee</strong>
+                                <span>Premium materials & craftsmanship</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-undo"></i>
+                            <div class="feature-text">
+                                <strong>30-Day Returns</strong>
+                                <span>Easy returns & exchanges</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="feature-text">
+                                <strong>24/7 Support</strong>
+                                <span>Expert customer service</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="specifications">Specifications</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews (24)</button>
+                    <button class="tab-btn" data-tab="care">Care Instructions</button>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-panel active" id="description">
+                        <div class="detailed-description" id="detailedDescription">
+                            <h3>Product Details</h3>
+                            <p>Loading detailed description...</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="specifications">
+                        <div class="specifications-table" id="specificationsTable">
+                            <h3>Product Specifications</h3>
+                            <!-- Specifications will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="reviews">
+                        <div class="reviews-section">
+                            <h3>Customer Reviews</h3>
+                            <div class="reviews-summary">
+                                <div class="average-rating">
+                                    <div class="rating-number">5.0</div>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="reviews-count">Based on 24 reviews</div>
+                                </div>
+                                <div class="rating-breakdown">
+                                    <div class="rating-bar">
+                                        <span>5 stars</span>
+                                        <div class="bar"><div class="fill" style="width: 85%"></div></div>
+                                        <span>20</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>4 stars</span>
+                                        <div class="bar"><div class="fill" style="width: 10%"></div></div>
+                                        <span>3</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>3 stars</span>
+                                        <div class="bar"><div class="fill" style="width: 5%"></div></div>
+                                        <span>1</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>2 stars</span>
+                                        <div class="bar"><div class="fill" style="width: 0%"></div></div>
+                                        <span>0</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>1 star</span>
+                                        <div class="bar"><div class="fill" style="width: 0%"></div></div>
+                                        <span>0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="individual-reviews" id="individualReviews">
+                                <!-- Reviews will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="care">
+                        <div class="care-instructions">
+                            <h3>Leather Care Instructions</h3>
+                            <div class="care-tips">
+                                <div class="care-tip">
+                                    <i class="fas fa-tint"></i>
+                                    <div>
+                                        <h4>Avoid Water Damage</h4>
+                                        <p>Keep leather away from excessive moisture. If wet, allow to air dry naturally.</p>
+                                    </div>
+                                </div>
+                                <div class="care-tip">
+                                    <i class="fas fa-sun"></i>
+                                    <div>
+                                        <h4>Protect from Sun</h4>
+                                        <p>Avoid prolonged exposure to direct sunlight to prevent fading and cracking.</p>
+                                    </div>
+                                </div>
+                                <div class="care-tip">
+                                    <i class="fas fa-hand-sparkles"></i>
+                                    <div>
+                                        <h4>Regular Cleaning</h4>
+                                        <p>Use a soft, dry cloth for regular cleaning. Apply leather conditioner monthly.</p>
+                                    </div>
+                                </div>
+                                <div class="care-tip">
+                                    <i class="fas fa-archive"></i>
+                                    <div>
+                                        <h4>Proper Storage</h4>
+                                        <p>Store in a cool, dry place with good air circulation. Use dust bags when not in use.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <h2>You Might Also Like</h2>
+                <div class="products-grid" id="relatedProducts">
+                    <!-- Related products will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be populated by JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-totals">
+                <div class="total-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">KES 0</span>
+                </div>
+                <div class="total-row">
+                    <span>Shipping:</span>
+                    <span id="cartShipping">KES 500</span>
+                </div>
+                <div class="total-row total-final">
+                    <span>Total:</span>
+                    <span id="cartTotal">KES 0</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button class="btn-secondary full-width" id="viewCart">View Cart</button>
+                <button class="btn-primary full-width" id="checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Image Zoom Modal -->
+    <div class="image-zoom-modal" id="imageZoomModal">
+        <div class="zoom-modal-content">
+            <button class="zoom-close">&times;</button>
+            <img id="zoomImage" src="" alt="Zoomed Product Image">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts-new.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>

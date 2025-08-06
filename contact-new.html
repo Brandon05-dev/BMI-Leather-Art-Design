@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | BMI Leather Art & Design</title>
+    <meta name="description" content="Get in touch with BMI Leather Art & Design for custom leather projects, repairs, consultations, and inquiries. Located in Nairobi, Kenya.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Additional styles for contact page */
+        .contact-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--charcoal), var(--soft-charcoal));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('bmi-logo.jpg') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-hero p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .contact-main {
+            padding: var(--section-padding);
+            background: var(--pure-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-method {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-gold);
+        }
+
+        .contact-method-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-method h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .contact-method-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .contact-method-content strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method-content a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-method-content a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: var(--primary-cream);
+            border-radius: var(--border-radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.half {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-field label {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            padding: 12px 15px;
+            border: 2px solid var(--warm-taupe);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-family: var(--font-body);
+            transition: var(--transition);
+            background: white;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-field textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-field select {
+            cursor: pointer;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .submit-btn {
+            background: var(--accent-gold);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-bronze);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .location-section {
+            padding: var(--section-padding);
+            background: var(--secondary-cream);
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            align-items: center;
+        }
+
+        .location-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .location-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .location-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .location-detail i {
+            color: var(--accent-gold);
+            width: 20px;
+            margin-top: 2px;
+        }
+
+        .location-detail div {
+            flex: 1;
+        }
+
+        .location-detail strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .location-detail span {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .map-container {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            height: 400px;
+            background: var(--warm-taupe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .hours-section {
+            padding: var(--section-padding);
+            background: var(--pure-white);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hours-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .hours-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-gold);
+        }
+
+        .hours-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hours-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--warm-taupe);
+            color: var(--text-secondary);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hours-list .day {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .quick-contact {
+            padding: var(--section-padding);
+            background: var(--charcoal);
+            color: white;
+            text-align: center;
+        }
+
+        .quick-contact h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .quick-contact p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .quick-contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .quick-contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .quick-contact-btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .quick-contact-btn.whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .quick-contact-btn.call {
+            background: transparent;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .quick-contact-btn.call:hover {
+            background: var(--accent-gold);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quick-contact-btn.email {
+            background: var(--accent-gold);
+            color: white;
+        }
+
+        .quick-contact-btn.email:hover {
+            background: var(--accent-bronze);
+            transform: translateY(-2px);
+        }
+
+        /* Success/Error Messages */
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding: 100px 0 60px;
+            }
+
+            .form-group.half {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .quick-contact-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .contact-method {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index-new.html" class="logo-link">
+                    <img src="bmi-logo.jpg" alt="BMI Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="brand-name">BMI Leather</span>
+                        <span class="brand-tagline">Art & Design</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="index-new.html" class="nav-link">Home</a></li>
+                    <li><a href="about-new.html" class="nav-link">About</a></li>
+                    <li><a href="product-new.html" class="nav-link">Collections</a></li>
+                    <li><a href="services-new.html" class="nav-link">Services</a></li>
+                    <li><a href="contact-new.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="inquiry-btn">Get Quote</button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1>Contact Us</h1>
+                <p>Ready to bring your leather vision to life? We'd love to hear from you. Reach out to discuss your project, ask questions, or visit our workshop.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Let's Start a Conversation</h2>
+                <p class="section-description">Whether you need a custom piece, repair service, or just have questions about leather care, we're here to help.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="contact-method-header">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Call Us</h3>
+                        </div>
+                        <div class="contact-method-content">
+                            <strong>Phone Number</strong>
+                            <a href="tel:+254707702773">+254 707 702 773</a>
+                            <p>Call us during business hours for immediate assistance. We're happy to discuss your project over the phone.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-method-header">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h3>WhatsApp</h3>
+                        </div>
+                        <div class="contact-method-content">
+                            <strong>Quick Messaging</strong>
+                            <a href="https://wa.me/254707702773" target="_blank">+254 707 702 773</a>
+                            <p>Send us a message on WhatsApp for quick responses. Share photos of items needing repair or inspiration for custom pieces.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-method-header">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
+                        </div>
+                        <div class="contact-method-content">
+                            <strong>General Inquiries</strong>
+                            <a href="mailto:info@bmileatherart.com">info@bmileatherart.com</a>
+                            <p>Send detailed project descriptions, questions, or business inquiries. We'll respond within 24 hours.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-method-header">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Visit Our Workshop</h3>
+                        </div>
+                        <div class="contact-method-content">
+                            <strong>Location</strong>
+                            Nairobi, Kenya
+                            <p>Schedule an appointment to visit our workshop, see our work in person, and discuss your project face-to-face.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-method-header">
+                            <div class="contact-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Social Media</h3>
+                        </div>
+                        <div class="contact-method-content">
+                            <strong>Follow Our Work</strong>
+                            <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                                <a href="https://www.facebook.com/bmileather" target="_blank" style="color: #1877F2;"><i class="fab fa-facebook-f"></i> Facebook</a>
+                                <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank" style="color: #E4405F;"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank" style="color: #000;"><i class="fab fa-threads"></i> Threads</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <div class="form-header">
+                        <h3>Send Us a Message</h3>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    </div>
+
+                    <div class="form-message" id="formMessage"></div>
+
+                    <form id="contactForm" action="#" method="POST">
+                        <div class="form-group half">
+                            <div class="form-field">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group half">
+                            <div class="form-field">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-field">
+                                <label for="serviceType">Service Type</label>
+                                <select id="serviceType" name="serviceType">
+                                    <option value="">Select a service...</option>
+                                    <option value="custom-design">Custom Design & Creation</option>
+                                    <option value="repair-restoration">Repair & Restoration</option>
+                                    <option value="leather-care">Leather Care</option>
+                                    <option value="consultation">Consultation</option>
+                                    <option value="workshop">Workshop/Training</option>
+                                    <option value="corporate">Corporate Orders</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-field">
+                                <label for="subject">Subject *</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-field">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" placeholder="Please provide details about your project, timeline, budget, or any specific requirements..." required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-submit">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Find Us</span>
+                <h2 class="section-title">Our Location</h2>
+                <p class="section-description">Visit our workshop to see our craftsmanship in action and discuss your project in person.</p>
+            </div>
+
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Workshop Details</h3>
+                    <div class="location-details">
+                        <div class="location-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address</strong>
+                                <span>Nairobi, Kenya<br>Specific address provided upon appointment</span>
+                            </div>
+                        </div>
+                        <div class="location-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Workshop Hours</strong>
+                                <span>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: By appointment only</span>
+                            </div>
+                        </div>
+                        <div class="location-detail">
+                            <i class="fas fa-car"></i>
+                            <div>
+                                <strong>Parking</strong>
+                                <span>Secure parking available for workshop visits</span>
+                            </div>
+                        </div>
+                        <div class="location-detail">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <strong>Appointments</strong>
+                                <span>We recommend scheduling a visit to ensure we can give you our full attention</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/254707702773?text=I'd like to schedule a workshop visit" class="btn-primary" target="_blank">
+                        <i class="fas fa-calendar-plus"></i>
+                        Schedule Visit
+                    </a>
+                </div>
+
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h4>Interactive Map</h4>
+                        <p>Contact us for detailed location and directions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours -->
+    <section class="hours-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">When We're Available</span>
+                <h2 class="section-title">Business Hours</h2>
+                <p class="section-description">We're here to help during these hours. For urgent repairs or custom rush orders, please call to discuss availability.</p>
+            </div>
+
+            <div class="hours-grid">
+                <div class="hours-card">
+                    <div class="hours-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Workshop Hours</h3>
+                    <ul class="hours-list">
+                        <li><span class="day">Monday</span> <span>9:00 AM - 6:00 PM</span></li>
+                        <li><span class="day">Tuesday</span> <span>9:00 AM - 6:00 PM</span></li>
+                        <li><span class="day">Wednesday</span> <span>9:00 AM - 6:00 PM</span></li>
+                        <li><span class="day">Thursday</span> <span>9:00 AM - 6:00 PM</span></li>
+                        <li><span class="day">Friday</span> <span>9:00 AM - 6:00 PM</span></li>
+                        <li><span class="day">Saturday</span> <span>10:00 AM - 4:00 PM</span></li>
+                        <li><span class="day">Sunday</span> <span>By Appointment</span></li>
+                    </ul>
+                </div>
+
+                <div class="hours-card">
+                    <div class="hours-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone Support</h3>
+                    <ul class="hours-list">
+                        <li><span class="day">Monday</span> <span>8:00 AM - 7:00 PM</span></li>
+                        <li><span class="day">Tuesday</span> <span>8:00 AM - 7:00 PM</span></li>
+                        <li><span class="day">Wednesday</span> <span>8:00 AM - 7:00 PM</span></li>
+                        <li><span class="day">Thursday</span> <span>8:00 AM - 7:00 PM</span></li>
+                        <li><span class="day">Friday</span> <span>8:00 AM - 7:00 PM</span></li>
+                        <li><span class="day">Saturday</span> <span>9:00 AM - 5:00 PM</span></li>
+                        <li><span class="day">Sunday</span> <span>Emergency Only</span></li>
+                    </ul>
+                </div>
+
+                <div class="hours-card">
+                    <div class="hours-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Response</h3>
+                    <ul class="hours-list">
+                        <li><span class="day">Monday</span> <span>7:00 AM - 9:00 PM</span></li>
+                        <li><span class="day">Tuesday</span> <span>7:00 AM - 9:00 PM</span></li>
+                        <li><span class="day">Wednesday</span> <span>7:00 AM - 9:00 PM</span></li>
+                        <li><span class="day">Thursday</span> <span>7:00 AM - 9:00 PM</span></li>
+                        <li><span class="day">Friday</span> <span>7:00 AM - 9:00 PM</span></li>
+                        <li><span class="day">Saturday</span> <span>8:00 AM - 8:00 PM</span></li>
+                        <li><span class="day">Sunday</span> <span>10:00 AM - 6:00 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Section -->
+    <section class="quick-contact">
+        <div class="container">
+            <h2>Need Immediate Assistance?</h2>
+            <p>Choose the fastest way to reach us based on your preference and urgency.</p>
+            <div class="quick-contact-buttons">
+                <a href="https://wa.me/254707702773" class="quick-contact-btn whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp Chat
+                </a>
+                <a href="tel:+254707702773" class="quick-contact-btn call">
+                    <i class="fas fa-phone"></i>
+                    Call Now
+                </a>
+                <a href="mailto:info@bmileatherart.com" class="quick-contact-btn email">
+                    <i class="fas fa-envelope"></i>
+                    Send Email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="bmi-logo.jpg" alt="BMI Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-brand-name">BMI Leather</span>
+                            <span class="footer-brand-tagline">Art & Design</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Crafting exceptional leather goods that blend traditional artisanship with contemporary design.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bmileather" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank" class="social-link">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                        <a href="https://wa.me/254707702773" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services-new.html#custom-design">Custom Design</a></li>
+                        <li><a href="services-new.html#repair">Repair & Restoration</a></li>
+                        <li><a href="services-new.html#care">Leather Care</a></li>
+                        <li><a href="services-new.html#consultation">Consultation</a></li>
+                        <li><a href="services-new.html#workshops">Workshops</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index-new.html">Home</a></li>
+                        <li><a href="about-new.html">About</a></li>
+                        <li><a href="product-new.html">Collections</a></li>
+                        <li><a href="services-new.html">Services</a></li>
+                        <li><a href="contact-new.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-methods" style="color: rgba(255, 255, 255, 0.8);">
+                        <div class="contact-method" style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-phone" style="margin-right: 0.5rem;"></i>
+                            <span>+254 707 702 773</span>
+                        </div>
+                        <div class="contact-method" style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                            <span>info@bmileatherart.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
+                            <span>Nairobi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 BMI Leather Art & Design. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Return Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="scripts-new.js"></script>
+    <script>
+        // Contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            function showMessage(message, type) {
+                formMessage.textContent = message;
+                formMessage.className = `form-message ${type}`;
+                formMessage.style.display = 'block';
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+                const submitBtn = contactForm.querySelector('.submit-btn');
+                
+                // Disable submit button
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                
+                // Simulate form submission (replace with actual form handling)
+                setTimeout(() => {
+                    // Get form values for WhatsApp message
+                    const firstName = formData.get('firstName');
+                    const lastName = formData.get('lastName');
+                    const email = formData.get('email');
+                    const phone = formData.get('phone');
+                    const serviceType = formData.get('serviceType');
+                    const subject = formData.get('subject');
+                    const message = formData.get('message');
+                    
+                    // Create WhatsApp message
+                    let whatsappMessage = `New Contact Form Submission:\n\n`;
+                    whatsappMessage += `Name: ${firstName} ${lastName}\n`;
+                    whatsappMessage += `Email: ${email}\n`;
+                    if (phone) whatsappMessage += `Phone: ${phone}\n`;
+                    if (serviceType) whatsappMessage += `Service: ${serviceType}\n`;
+                    whatsappMessage += `Subject: ${subject}\n\n`;
+                    whatsappMessage += `Message:\n${message}`;
+                    
+                    // Open WhatsApp with the message
+                    const whatsappURL = `https://wa.me/254707702773?text=${encodeURIComponent(whatsappMessage)}`;
+                    window.open(whatsappURL, '_blank');
+                    
+                    showMessage('Thank you for your message! We\'ll get back to you soon.', 'success');
+                    contactForm.reset();
+                    
+                    // Re-enable submit button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                }, 1000);
+            });
+
+            // Form animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe contact methods and cards
+            const animatedElements = document.querySelectorAll('.contact-method, .hours-card');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+
+            // Form field focus effects
+            const formFields = document.querySelectorAll('.form-field input, .form-field select, .form-field textarea');
+            formFields.forEach(field => {
+                field.addEventListener('focus', function() {
+                    this.parentElement.style.transform = 'translateY(-2px)';
+                });
+                
+                field.addEventListener('blur', function() {
+                    this.parentElement.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

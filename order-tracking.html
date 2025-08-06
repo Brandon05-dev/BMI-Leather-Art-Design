@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Order | BMI Leather Art & Design</title>
+    <meta name="description" content="Track your BMI Leather Art & Design order status and delivery progress.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="stylesheet" href="ecommerce.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index-new.html" class="logo-link">
+                    <img src="bmi-logo.jpg" alt="BMI Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="brand-name">BMI Leather</span>
+                        <span class="brand-tagline">Art & Design</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="index-new.html" class="nav-link">Home</a></li>
+                    <li><a href="about-new.html" class="nav-link">About</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="services-new.html" class="nav-link">Services</a></li>
+                    <li><a href="contact-new.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-icon" id="searchIcon" title="Search Products">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="wishlist-icon" id="wishlistIcon" title="Wishlist">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count" id="wishlistCount">0</span>
+                </div>
+                <div class="cart-icon" id="cartIcon" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Track Your Order</h1>
+            <nav class="breadcrumb">
+                <a href="index-new.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Order Tracking</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Order Tracking Section -->
+    <section class="tracking-section">
+        <div class="container">
+            <!-- Track Order Form -->
+            <div class="tracking-form-container">
+                <div class="tracking-form-card">
+                    <h2>Enter Your Order Details</h2>
+                    <p>Please enter your order number and email to track your order status.</p>
+                    
+                    <form id="trackingForm" class="tracking-form">
+                        <div class="form-group">
+                            <label for="orderNumber">Order Number</label>
+                            <input type="text" id="orderNumber" name="orderNumber" placeholder="e.g., BMI240806001" required>
+                            <small>You can find this in your order confirmation email</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary track-btn">
+                            <i class="fas fa-search"></i>
+                            Track Order
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Order Status Display -->
+            <div id="orderStatus" class="order-status-container" style="display: none;">
+                <div class="order-info-card">
+                    <div class="order-header">
+                        <h3>Order <span id="displayOrderNumber">#BMI240806001</span></h3>
+                        <div class="order-date">Placed on <span id="orderDate">August 6, 2025</span></div>
+                    </div>
+                    
+                    <div class="order-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        
+                        <div class="progress-steps">
+                            <div class="step completed" data-step="1">
+                                <div class="step-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="step-info">
+                                    <div class="step-title">Order Confirmed</div>
+                                    <div class="step-time">Aug 6, 10:30 AM</div>
+                                </div>
+                            </div>
+                            
+                            <div class="step completed" data-step="2">
+                                <div class="step-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="step-info">
+                                    <div class="step-title">In Production</div>
+                                    <div class="step-time">Aug 6, 2:15 PM</div>
+                                </div>
+                            </div>
+                            
+                            <div class="step active" data-step="3">
+                                <div class="step-icon">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                                <div class="step-info">
+                                    <div class="step-title">Quality Check</div>
+                                    <div class="step-time">Expected: Aug 7</div>
+                                </div>
+                            </div>
+                            
+                            <div class="step" data-step="4">
+                                <div class="step-icon">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="step-info">
+                                    <div class="step-title">Shipped</div>
+                                    <div class="step-time">Expected: Aug 8</div>
+                                </div>
+                            </div>
+                            
+                            <div class="step" data-step="5">
+                                <div class="step-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="step-info">
+                                    <div class="step-title">Delivered</div>
+                                    <div class="step-time">Expected: Aug 10</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="current-status">
+                        <div class="status-badge status-in-progress">
+                            <i class="fas fa-clock"></i>
+                            In Production
+                        </div>
+                        <p class="status-message">Your handcrafted leather item is being carefully made by our skilled artisans. We'll notify you once it's ready for quality check.</p>
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <div class="order-items-card">
+                    <h4>Order Items</h4>
+                    <div id="orderItems" class="order-items-list">
+                        <!-- Items will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="orderSubtotal">KES 15,500</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Shipping:</span>
+                            <span id="orderShipping">KES 500</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax:</span>
+                            <span id="orderTax">KES 2,560</span>
+                        </div>
+                        <div class="total-row total-final">
+                            <span>Total:</span>
+                            <span id="orderTotal">KES 18,560</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Information -->
+                <div class="shipping-info-card">
+                    <h4>Shipping Information</h4>
+                    <div class="shipping-details">
+                        <div class="shipping-address">
+                            <h5>Delivery Address</h5>
+                            <address id="shippingAddress">
+                                John Doe<br>
+                                123 Kenyatta Avenue<br>
+                                Nairobi, Kenya<br>
+                                +254 700 123 456
+                            </address>
+                        </div>
+                        
+                        <div class="shipping-method">
+                            <h5>Shipping Method</h5>
+                            <p id="shippingMethod">Standard Delivery (3-5 business days)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="tracking-actions">
+                    <button class="btn-secondary" onclick="window.print()">
+                        <i class="fas fa-print"></i>
+                        Print Details
+                    </button>
+                    <a href="contact-new.html" class="btn-primary">
+                        <i class="fas fa-question-circle"></i>
+                        Need Help?
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sample Orders for Demo -->
+            <div class="sample-orders">
+                <h3>Sample Order Numbers for Testing</h3>
+                <div class="sample-list">
+                    <div class="sample-item" onclick="fillSampleOrder('BMI240806001', 'john@example.com')">
+                        <strong>BMI240806001</strong> - john@example.com (In Production)
+                    </div>
+                    <div class="sample-item" onclick="fillSampleOrder('BMI240805002', 'jane@example.com')">
+                        <strong>BMI240805002</strong> - jane@example.com (Shipped)
+                    </div>
+                    <div class="sample-item" onclick="fillSampleOrder('BMI240804003', 'mike@example.com')">
+                        <strong>BMI240804003</strong> - mike@example.com (Delivered)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be populated by JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-totals">
+                <div class="total-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">KES 0</span>
+                </div>
+                <div class="total-row">
+                    <span>Shipping:</span>
+                    <span id="cartShipping">KES 500</span>
+                </div>
+                <div class="total-row total-final">
+                    <span>Total:</span>
+                    <span id="cartTotal">KES 0</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button class="btn-secondary full-width" id="viewCart">View Cart</button>
+                <button class="btn-primary full-width" id="checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Scripts -->
+    <script src="scripts-new.js"></script>
+    <script src="order-tracking.js"></script>
+</body>
+</html>

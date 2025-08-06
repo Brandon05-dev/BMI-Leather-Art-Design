@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation | BMI Leather Art & Design</title>
+    <meta name="description" content="Thank you for your order! Your premium leather goods are being prepared for shipment.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .confirmation-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #f8f6f0 0%, #e8e2d4 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .confirmation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23D4AF37" opacity="0.1"/></svg>') repeat;
+            background-size: 50px 50px;
+        }
+
+        .confirmation-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: successPulse 2s ease-in-out infinite;
+        }
+
+        .success-icon i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .confirmation-hero h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .confirmation-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .order-number {
+            background: white;
+            border: 2px solid var(--accent-gold);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .order-number-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .order-number-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+        }
+
+        .confirmation-main {
+            padding: 3rem 0;
+            background: var(--pure-white);
+        }
+
+        .confirmation-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--warm-taupe);
+        }
+
+        .info-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card h3 i {
+            color: var(--accent-gold);
+        }
+
+        .info-details {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .info-details strong {
+            color: var(--text-primary);
+        }
+
+        .timeline {
+            background: var(--primary-cream);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .timeline h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .timeline-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--warm-taupe);
+            z-index: 1;
+        }
+
+        .timeline-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        .step-circle.completed {
+            background: var(--accent-gold);
+        }
+
+        .step-circle.pending {
+            background: var(--warm-taupe);
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .order-details {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--warm-taupe);
+            margin-bottom: 3rem;
+        }
+
+        .order-details h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--warm-taupe);
+            padding-bottom: 0.5rem;
+        }
+
+        .order-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--warm-taupe);
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .item-category {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-quantity {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .item-price {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .order-summary {
+            background: var(--primary-cream);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            border-top: 2px solid var(--warm-taupe);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .action-btn {
+            background: var(--accent-gold);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .action-btn:hover {
+            background: var(--accent-bronze);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .action-btn.secondary {
+            background: transparent;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+        }
+
+        .action-btn.secondary:hover {
+            background: var(--accent-gold);
+            color: white;
+        }
+
+        .support-section {
+            background: var(--primary-cream);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .support-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .support-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .support-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .support-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .support-contact:hover {
+            color: var(--accent-gold);
+        }
+
+        .support-contact i {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .confirmation-hero h1 {
+                font-size: 2rem;
+            }
+
+            .timeline-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .timeline-steps::before {
+                display: none;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .support-contacts {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index-new.html" class="logo-link">
+                    <img src="bmi-logo.jpg" alt="BMI Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="brand-name">BMI Leather</span>
+                        <span class="brand-tagline">Art & Design</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="index-new.html" class="nav-link">Home</a></li>
+                    <li><a href="about-new.html" class="nav-link">About</a></li>
+                    <li><a href="product-new.html" class="nav-link">Shop</a></li>
+                    <li><a href="services-new.html" class="nav-link">Services</a></li>
+                    <li><a href="contact-new.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button class="inquiry-btn">Get Quote</button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Confirmation Hero -->
+    <section class="confirmation-hero">
+        <div class="container">
+            <div class="confirmation-content">
+                <div class="success-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h1>Order Confirmed!</h1>
+                <p>Thank you for choosing BMI Leather Art & Design. Your order has been received and is being processed. We'll send you updates as your premium leather goods are crafted and prepared for shipment.</p>
+                
+                <div class="order-number">
+                    <div class="order-number-label">Your Order Number</div>
+                    <div class="order-number-value">#BMI-2025-001</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Main -->
+    <section class="confirmation-main">
+        <div class="confirmation-container">
+            <!-- Order Information -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>
+                        <i class="fas fa-user"></i>
+                        Customer Details
+                    </h3>
+                    <div class="info-details">
+                        <strong>John Doe</strong><br>
+                        john.doe@email.com<br>
+                        +254 700 000 000
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <i class="fas fa-shipping-fast"></i>
+                        Shipping Address
+                    </h3>
+                    <div class="info-details">
+                        123 Sample Street<br>
+                        Westlands, Nairobi<br>
+                        00100 Kenya
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <i class="fas fa-credit-card"></i>
+                        Payment Method
+                    </h3>
+                    <div class="info-details">
+                        <strong>M-Pesa</strong><br>
+                        +254 700 000 000<br>
+                        <span style="color: var(--accent-gold);">Payment Pending</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <i class="fas fa-clock"></i>
+                        Delivery Info
+                    </h3>
+                    <div class="info-details">
+                        <strong>Estimated Delivery:</strong><br>
+                        January 20-22, 2025<br>
+                        <strong>Shipping Method:</strong> Standard Delivery
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Timeline -->
+            <div class="timeline">
+                <h3>Order Progress</h3>
+                <div class="timeline-steps">
+                    <div class="timeline-step">
+                        <div class="step-circle completed">1</div>
+                        <div class="step-title">Order Placed</div>
+                        <div class="step-description">Jan 15, 2025</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-circle pending">2</div>
+                        <div class="step-title">Processing</div>
+                        <div class="step-description">1-2 days</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-circle pending">3</div>
+                        <div class="step-title">Crafting</div>
+                        <div class="step-description">2-3 days</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-circle pending">4</div>
+                        <div class="step-title">Shipped</div>
+                        <div class="step-description">1-2 days</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-circle pending">5</div>
+                        <div class="step-title">Delivered</div>
+                        <div class="step-description">Jan 20-22</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Details -->
+            <div class="order-details">
+                <h3>Order Details</h3>
+                <div class="order-item">
+                    <img src="images/1.jpg" alt="Executive Pen Holder" class="item-image">
+                    <div class="item-details">
+                        <div class="item-title">Executive Pen Holder</div>
+                        <div class="item-category">Office Accessories</div>
+                        <div class="item-quantity">Quantity: 1</div>
+                    </div>
+                    <div class="item-price">KES 11,050</div>
+                </div>
+                <div class="order-item">
+                    <img src="images/3.jpg" alt="Artisan Watch Strap" class="item-image">
+                    <div class="item-details">
+                        <div class="item-title">Artisan Watch Strap</div>
+                        <div class="item-category">Accessories</div>
+                        <div class="item-quantity">Quantity: 2</div>
+                    </div>
+                    <div class="item-price">KES 11,700</div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span>KES 22,750</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span>KES 500</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (VAT 16%):</span>
+                        <span>KES 3,720</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span>KES 26,970</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="#" class="action-btn" onclick="window.print()">
+                    <i class="fas fa-print"></i>
+                    Print Order
+                </a>
+                <a href="product-new.html" class="action-btn secondary">
+                    <i class="fas fa-shopping-bag"></i>
+                    Continue Shopping
+                </a>
+                <a href="https://wa.me/254707702773?text=Hi, I need help with my order #BMI-2025-001" class="action-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    Track Order
+                </a>
+            </div>
+
+            <!-- Support Section -->
+            <div class="support-section">
+                <h3>Need Help?</h3>
+                <p>Our customer service team is here to assist you with any questions about your order.</p>
+                <div class="support-contacts">
+                    <a href="tel:+254707702773" class="support-contact">
+                        <i class="fas fa-phone"></i>
+                        +254 707 702 773
+                    </a>
+                    <a href="mailto:info@bmileatherart.com" class="support-contact">
+                        <i class="fas fa-envelope"></i>
+                        info@bmileatherart.com
+                    </a>
+                    <a href="https://wa.me/254707702773" class="support-contact">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="bmi-logo.jpg" alt="BMI Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-brand-name">BMI Leather</span>
+                            <span class="footer-brand-tagline">Art & Design</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Crafting exceptional leather goods that blend traditional artisanship with contemporary design.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index-new.html">Home</a></li>
+                        <li><a href="about-new.html">About</a></li>
+                        <li><a href="product-new.html">Shop</a></li>
+                        <li><a href="services-new.html">Services</a></li>
+                        <li><a href="contact-new.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-methods" style="color: rgba(255, 255, 255, 0.8);">
+                        <div class="contact-method" style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-phone" style="margin-right: 0.5rem;"></i>
+                            <span>+254 707 702 773</span>
+                        </div>
+                        <div class="contact-method" style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                            <span>info@bmileatherart.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
+                            <span>Nairobi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 BMI Leather Art & Design. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Return Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts-new.js"></script>
+    <script>
+        // Generate random order number on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const orderNumber = 'BMI-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+            document.querySelector('.order-number-value').textContent = '#' + orderNumber;
+            
+            // Update WhatsApp links with the order number
+            const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+            whatsappLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href.includes('order')) {
+                    link.setAttribute('href', href.replace('#BMI-2025-001', '#' + orderNumber));
+                }
+            });
+        });
+    </script>
+</body>
+</html>

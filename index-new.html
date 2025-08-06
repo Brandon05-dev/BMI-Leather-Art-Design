@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Leather Art & Design | Premium Handcrafted Leather Artistry</title>
+    <meta name="description" content="Discover premium handcrafted leather art and accessories. BMI Leather Art & Design creates bespoke leather goods that blend tradition with modern elegance.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="stylesheet" href="ecommerce.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div id="loading-overlay">
+        <div class="loading-content">
+            <img src="bmi-logo.jpg" alt="BMI Logo" class="loading-logo">
+            <div class="loading-text">
+                <span class="craft-text">Crafting Excellence,</span>
+                <span class="stitch-text">One Stitch at a Time</span>
+            </div>
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index-new.html" class="logo-link">
+                    <img src="bmi-logo.jpg" alt="BMI Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="brand-name">BMI Leather</span>
+                        <span class="brand-tagline">Art & Design</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="index-new.html" class="nav-link active">Home</a></li>
+                    <li><a href="about-new.html" class="nav-link">About</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="#collections" class="nav-link">Collections</a></li>
+                    <li><a href="services-new.html" class="nav-link">Services</a></li>
+                    <li><a href="contact-new.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-icon" id="searchIcon" title="Search Products">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="wishlist-icon" id="wishlistIcon" title="Wishlist">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count" id="wishlistCount">0</span>
+                </div>
+                <div class="cart-icon" id="cartIcon" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button class="inquiry-btn">Get Quote</button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-slider">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+                <div class="hero-image-container">
+                    <img src="1.jpg" alt="Premium Leather Handbag" class="hero-image">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-main">Artisan</span>
+                            <span class="title-accent">Leather Craft</span>
+                        </h1>
+                        <p class="hero-description">
+                            Where traditional craftsmanship meets contemporary design. Each piece tells a story of heritage, quality, and timeless elegance.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="shop.html" class="btn-primary">Explore Collection</a>
+                            <a href="#about" class="btn-secondary">Our Story</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <div class="hero-image-container">
+                    <img src="2.jpg" alt="Handcrafted Leather Accessories" class="hero-image">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-main">Bespoke</span>
+                            <span class="title-accent">Leather Goods</span>
+                        </h1>
+                        <p class="hero-description">
+                            Handcrafted with precision and passion. Our artisans create unique pieces that reflect your personal style and sophistication.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="shop.html" class="btn-primary">Browse Products</a>
+                            <a href="#contact" class="btn-secondary">Custom Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <div class="hero-image-container">
+                    <img src="3.jpg" alt="Sustainable Leather Crafting" class="hero-image">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-main">Sustainable</span>
+                            <span class="title-accent">Luxury</span>
+                        </h1>
+                        <p class="hero-description">
+                            Ethically sourced materials and eco-conscious processes. Beauty that doesn't compromise on values or quality.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#about" class="btn-primary">Learn More</a>
+                            <a href="#contact" class="btn-secondary">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Navigation -->
+        <div class="hero-nav">
+            <button class="hero-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="hero-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+            <button class="hero-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll to explore</span>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Handcrafted Excellence</h3>
+                    <p>Every piece is meticulously crafted by skilled artisans using time-honored techniques passed down through generations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Materials</h3>
+                    <p>We source only the finest, ethically-produced leather, supporting sustainable practices and local communities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Custom Design</h3>
+                    <p>Personalize your leather goods with bespoke designs that reflect your unique style and personality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-header">
+                        <span class="section-subtitle">Our Story</span>
+                        <h2 class="section-title">Crafting Tradition, Inspiring Innovation</h2>
+                    </div>
+                    <p class="about-description">
+                        BMI Leather Art & Design was born from a passion for preserving traditional leather craftsmanship while embracing contemporary design sensibilities. Our workshop in Kenya serves as a creative hub where skilled artisans transform premium leather into exceptional pieces that stand the test of time.
+                    </p>
+                    <p class="about-description">
+                        Each creation is a testament to our commitment to quality, sustainability, and artistic excellence. We believe that true luxury lies not just in the finished product, but in the story it tells and the values it represents.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Handcrafted</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn-primary">Discover Our Process</a>
+                </div>
+                <div class="about-visual">
+                    <div class="about-image-container">
+                        <img src="bmi-logo.jpg" alt="BMI Leather Artisan at Work" class="about-image">
+                        <div class="about-image-accent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Preview -->
+    <section id="gallery" class="featured-products">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Signature Collection</span>
+                <h2 class="section-title">Featured Creations</h2>
+                <p class="section-description">Discover our most celebrated pieces, each representing the pinnacle of leather artistry and design innovation.</p>
+            </div>
+            
+            <div class="products-preview">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/1.jpg" alt="Leather Pen Holder" class="product-image">
+                        <div class="product-overlay">
+                            <div class="product-actions">
+                                <button class="action-btn" data-action="view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn" data-action="favorite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Executive Pen Holder</h3>
+                        <p class="product-category">Office Accessories</p>
+                        <div class="product-pricing">
+                            <span class="product-price">KES 11,050</span>
+                            <span class="product-price-note">Starting from</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product="pen-holder" data-price="11050">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/2.jpg" alt="Wine Holster" class="product-image">
+                        <div class="product-overlay">
+                            <div class="product-actions">
+                                <button class="action-btn" data-action="view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn" data-action="favorite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-badge sale">-15%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Premium Wine Carrier</h3>
+                        <p class="product-category">Lifestyle</p>
+                        <div class="product-pricing">
+                            <span class="product-price">KES 13,600</span>
+                            <span class="product-price-old">KES 16,000</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product="wine-carrier" data-price="13600">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/3.jpg" alt="Watch Strap" class="product-image">
+                        <div class="product-overlay">
+                            <div class="product-actions">
+                                <button class="action-btn" data-action="view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn" data-action="favorite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-badge new">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Artisan Watch Strap</h3>
+                        <p class="product-category">Accessories</p>
+                        <div class="product-pricing">
+                            <span class="product-price">KES 5,850</span>
+                            <span class="product-price-note">Starting from</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product="watch-strap" data-price="5850">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/4.jpg" alt="Dog Holster" class="product-image">
+                        <div class="product-overlay">
+                            <div class="product-actions">
+                                <button class="action-btn" data-action="view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn" data-action="favorite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-badge bestseller">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Pet Accessories Set</h3>
+                        <p class="product-category">Pet Care</p>
+                        <div class="product-pricing">
+                            <span class="product-price">KES 12,350</span>
+                            <span class="product-price-note">Complete set</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product="pet-accessories" data-price="12350">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="product-new.html" class="btn-primary">View All Collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Client Stories</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The quality of craftsmanship is exceptional. My custom leather bag has become my most treasured accessory. The attention to detail and personal service exceeded all expectations."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 class="author-name">Sarah Mitchell</h4>
+                                <span class="author-title">Interior Designer</span>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "BMI Leather Art created a bespoke briefcase that perfectly matches my professional needs. The durability and elegance are unmatched. Highly recommended for anyone seeking quality."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 class="author-name">James Rodriguez</h4>
+                                <span class="author-title">Business Executive</span>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Their commitment to sustainability without compromising on luxury is remarkable. Each piece tells a story and ages beautifully. True artisan work."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 class="author-name">Emma Thompson</h4>
+                                <span class="author-title">Fashion Blogger</span>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-nav">
+                <button class="testimonial-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="testimonial-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+                <button class="testimonial-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="section-header">
+                        <span class="section-subtitle">Get in Touch</span>
+                        <h2 class="section-title">Let's Create Something Beautiful Together</h2>
+                    </div>
+                    <p class="contact-description">
+                        Ready to commission a custom piece or have questions about our collections? We'd love to hear from you.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Call Us</h4>
+                                <p>+254 707 702 773</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Email Us</h4>
+                                <p>info@bmileatherart.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Visit Us</h4>
+                                <p>Nairobi, Kenya</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-cta">
+                        <a href="https://wa.me/254707702773" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Chat on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <select id="inquiry" name="inquiry" required>
+                                <option value="">Select inquiry type</option>
+                                <option value="custom">Custom Design</option>
+                                <option value="product">Product Information</option>
+                                <option value="collaboration">Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Tell us about your project or inquiry" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="bmi-logo.jpg" alt="BMI Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-brand-name">BMI Leather</span>
+                            <span class="footer-brand-tagline">Art & Design</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Crafting exceptional leather goods that blend traditional artisanship with contemporary design, creating timeless pieces for the modern world.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bmileather" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank" class="social-link">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                        <a href="https://wa.me/254707702773" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="services-new.html">Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Custom Design</a></li>
+                        <li><a href="#">Repairs & Restoration</a></li>
+                        <li><a href="#">Leather Care</a></li>
+                        <li><a href="#">Consultations</a></li>
+                        <li><a href="#">Workshops</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with our latest creations and exclusive offers.</p>
+                    <form class="newsletter-form">
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 BMI Leather Art & Design. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Return Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Your cart is empty</p>
+                    <a href="product-new.html" class="btn-primary">Start Shopping</a>
+                </div>
+            </div>
+            <div class="cart-footer" id="cartFooter" style="display: none;">
+                <div class="cart-total">
+                    <div class="total-row">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal">KES 0</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Shipping:</span>
+                        <span id="cartShipping">KES 500</span>
+                    </div>
+                    <div class="total-row total-final">
+                        <span>Total:</span>
+                        <span id="cartTotal">KES 0</span>
+                    </div>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-secondary full-width" id="viewCart">View Cart</button>
+                    <button class="btn-primary full-width" id="checkout">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Notification Toast -->
+    <div class="notification-toast" id="notificationToast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span class="toast-message">Item added to cart!</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts-new.js"></script>
+</body>
+</html>

@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections | BMI Leather Art & Design</title>
+    <meta name="description" content="Explore our curated collections of handcrafted leather goods. From accessories to custom pieces, discover artisan quality at BMI Leather Art & Design.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Additional styles for product page */
+        .collections-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--primary-cream), var(--secondary-cream));
+            text-align: center;
+        }
+
+        .collections-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .collections-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .collections-filter {
+            background: var(--pure-white);
+            padding: 40px 0;
+            border-bottom: 1px solid var(--warm-taupe);
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--warm-taupe);
+            color: var(--text-primary);
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: white;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .view-btn {
+            background: transparent;
+            border: 1px solid var(--warm-taupe);
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .view-btn.active {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: white;
+        }
+
+        .collections-grid {
+            padding: 60px 0;
+            background: var(--primary-cream);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .products-grid.list-view {
+            grid-template-columns: 1fr;
+        }
+
+        .product-item {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .product-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-item.list-view {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-item:not(.list-view) .product-image-wrapper {
+            height: 250px;
+        }
+
+        .product-item.list-view .product-image-wrapper {
+            width: 200px;
+            height: 200px;
+            flex-shrink: 0;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-item:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--accent-gold);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .product-item:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .overlay-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .overlay-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: white;
+            border: none;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .overlay-btn:hover {
+            background: var(--accent-gold);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .product-category {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-item.list-view .product-description {
+            -webkit-line-clamp: 3;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stars {
+            color: var(--accent-gold);
+        }
+
+        .rating-text {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .load-more {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .load-more-btn {
+            background: transparent;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 15px 40px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .load-more-btn:hover {
+            background: var(--accent-gold);
+            color: white;
+        }
+
+        .breadcrumb {
+            background: var(--secondary-cream);
+            padding: 20px 0;
+        }
+
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-light);
+        }
+
+        .results-count {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .filter-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-buttons {
+                justify-content: center;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-item.list-view {
+                flex-direction: column;
+            }
+
+            .product-item.list-view .product-image-wrapper {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index-new.html" class="logo-link">
+                    <img src="bmi-logo.jpg" alt="BMI Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="brand-name">BMI Leather</span>
+                        <span class="brand-tagline">Art & Design</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="index-new.html" class="nav-link">Home</a></li>
+                    <li><a href="about-new.html" class="nav-link">About</a></li>
+                    <li><a href="product-new.html" class="nav-link active">Shop</a></li>
+                    <li><a href="services-new.html" class="nav-link">Services</a></li>
+                    <li><a href="contact-new.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button class="inquiry-btn">Get Quote</button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index-new.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span>Collections</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Collections Hero -->
+    <section class="collections-hero">
+        <div class="container">
+            <h1>Our Collections</h1>
+            <p>Discover handcrafted leather goods that blend traditional artistry with contemporary design. Each piece tells a story of passion, precision, and timeless elegance.</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="collections-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Products</button>
+                    <button class="filter-btn" data-filter="accessories">Accessories</button>
+                    <button class="filter-btn" data-filter="bags">Bags & Cases</button>
+                    <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+                    <button class="filter-btn" data-filter="office">Office</button>
+                    <button class="filter-btn" data-filter="custom">Custom</button>
+                </div>
+                <div class="filter-meta">
+                    <span class="results-count">Showing <span id="resultsCount">24</span> products</span>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Grid -->
+    <section class="collections-grid">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Product 1 -->
+                <div class="product-item" data-category="office">
+                    <div class="product-image-wrapper">
+                        <img src="images/1.jpg" alt="Executive Pen Holder" class="product-image">
+                        <div class="product-badge">Popular</div>
+                        <div class="product-overlay">
+                            <div class="overlay-actions">
+                                <button class="overlay-btn" data-action="quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="favorite">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="inquiry">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Office Accessories</div>
+                        <h3 class="product-title">Executive Pen Holder</h3>
+                        <p class="product-description">Handcrafted leather pen holder perfect for executive desks. Features multiple compartments and premium finishing.</p>
+                        <div class="product-meta">
+                            <div class="product-pricing">
+                                <span class="product-price">KES 11,050</span>
+                                <span class="product-price-note">Starting from</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-product="pen-holder" data-price="11050">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">(24)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-item" data-category="lifestyle">
+                    <div class="product-image-wrapper">
+                        <img src="images/2.jpg" alt="Premium Wine Carrier" class="product-image">
+                        <div class="product-overlay">
+                            <div class="overlay-actions">
+                                <button class="overlay-btn" data-action="quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="favorite">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="inquiry">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Lifestyle</div>
+                        <h3 class="product-title">Premium Wine Carrier</h3>
+                        <p class="product-description">Elegant leather wine carrier for special occasions. Padded interior and secure closure for safe transport.</p>
+                        <div class="product-meta">
+                            <span class="product-price">From $120</span>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">(18)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-item" data-category="accessories">
+                    <div class="product-image-wrapper">
+                        <img src="images/3.jpg" alt="Artisan Watch Strap" class="product-image">
+                        <div class="product-overlay">
+                            <div class="overlay-actions">
+                                <button class="overlay-btn" data-action="quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="favorite">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="inquiry">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Accessories</div>
+                        <h3 class="product-title">Artisan Watch Strap</h3>
+                        <p class="product-description">Handcrafted leather watch strap available in multiple colors. Premium leather with durable stitching.</p>
+                        <div class="product-meta">
+                            <span class="product-price">From $45</span>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-text">(32)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-item" data-category="accessories">
+                    <div class="product-image-wrapper">
+                        <img src="images/4.jpg" alt="Pet Accessories Set" class="product-image">
+                        <div class="product-badge">New</div>
+                        <div class="product-overlay">
+                            <div class="overlay-actions">
+                                <button class="overlay-btn" data-action="quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="favorite">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="inquiry">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Pet Accessories</div>
+                        <h3 class="product-title">Leather Pet Collar & Leash</h3>
+                        <p class="product-description">Premium leather pet accessories designed for comfort and durability. Available in various sizes and colors.</p>
+                        <div class="product-meta">
+                            <span class="product-price">From $65</span>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">(15)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-item" data-category="accessories">
+                    <div class="product-image-wrapper">
+                        <img src="images/5.jpg" alt="Classic Leather Belt" class="product-image">
+                        <div class="product-overlay">
+                            <div class="overlay-actions">
+                                <button class="overlay-btn" data-action="quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="favorite">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="inquiry">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Accessories</div>
+                        <h3 class="product-title">Classic Leather Belt</h3>
+                        <p class="product-description">Timeless leather belt crafted from premium cowhide. Features solid brass hardware and custom sizing.</p>
+                        <div class="product-meta">
+                            <span class="product-price">From $75</span>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">(28)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-item" data-category="accessories">
+                    <div class="product-image-wrapper">
+                        <img src="images/6.jpg" alt="Leather Key Holder" class="product-image">
+                        <div class="product-overlay">
+                            <div class="overlay-actions">
+                                <button class="overlay-btn" data-action="quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="favorite">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="inquiry">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Accessories</div>
+                        <h3 class="product-title">Leather Key Holder</h3>
+                        <p class="product-description">Compact leather key holder with multiple key rings. Perfect for organizing keys in style.</p>
+                        <div class="product-meta">
+                            <span class="product-price">From $35</span>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-text">(21)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Products -->
+                <div class="product-item" data-category="bags">
+                    <div class="product-image-wrapper">
+                        <img src="images/7.jpg" alt="Executive Briefcase" class="product-image">
+                        <div class="product-badge">Premium</div>
+                        <div class="product-overlay">
+                            <div class="overlay-actions">
+                                <button class="overlay-btn" data-action="quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="favorite">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="inquiry">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Business Bags</div>
+                        <h3 class="product-title">Executive Briefcase</h3>
+                        <p class="product-description">Professional leather briefcase with laptop compartment. Crafted for the modern executive.</p>
+                        <div class="product-meta">
+                            <span class="product-price">From $285</span>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">(12)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="custom">
+                    <div class="product-image-wrapper">
+                        <img src="images/8.jpg" alt="Custom Leather Wallet" class="product-image">
+                        <div class="product-overlay">
+                            <div class="overlay-actions">
+                                <button class="overlay-btn" data-action="quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="favorite">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="inquiry">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Custom Design</div>
+                        <h3 class="product-title">Personalized Wallet</h3>
+                        <p class="product-description">Custom leather wallet with personalized engraving. Multiple card slots and premium construction.</p>
+                        <div class="product-meta">
+                            <span class="product-price">From $95</span>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">(35)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="lifestyle">
+                    <div class="product-image-wrapper">
+                        <img src="images/9.jpg" alt="Leather Journal Cover" class="product-image">
+                        <div class="product-overlay">
+                            <div class="overlay-actions">
+                                <button class="overlay-btn" data-action="quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="favorite">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="overlay-btn" data-action="inquiry">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Lifestyle</div>
+                        <h3 class="product-title">Artisan Journal Cover</h3>
+                        <p class="product-description">Handcrafted leather journal cover with refillable pages. Perfect for writers and professionals.</p>
+                        <div class="product-meta">
+                            <span class="product-price">From $68</span>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-text">(19)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="load-more">
+                <button class="load-more-btn" id="loadMoreBtn">Load More Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="bmi-logo.jpg" alt="BMI Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-brand-name">BMI Leather</span>
+                            <span class="footer-brand-tagline">Art & Design</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Crafting exceptional leather goods that blend traditional artisanship with contemporary design.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bmileather" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank" class="social-link">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                        <a href="https://wa.me/254707702773" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index-new.html">Home</a></li>
+                        <li><a href="about-new.html">About</a></li>
+                        <li><a href="product-new.html">Collections</a></li>
+                        <li><a href="services-new.html">Services</a></li>
+                        <li><a href="contact-new.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Bags & Cases</a></li>
+                        <li><a href="#">Office Items</a></li>
+                        <li><a href="#">Custom Designs</a></li>
+                        <li><a href="#">Pet Accessories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <span>+254 707 702 773</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@bmileatherart.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Nairobi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 BMI Leather Art & Design. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Return Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Your cart is empty</p>
+                    <a href="product-new.html" class="btn-primary">Start Shopping</a>
+                </div>
+            </div>
+            <div class="cart-footer" id="cartFooter" style="display: none;">
+                <div class="cart-total">
+                    <div class="total-row">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal">KES 0</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Shipping:</span>
+                        <span id="cartShipping">KES 500</span>
+                    </div>
+                    <div class="total-row total-final">
+                        <span>Total:</span>
+                        <span id="cartTotal">KES 0</span>
+                    </div>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-secondary full-width" id="viewCart">View Cart</button>
+                    <button class="btn-primary full-width" id="checkout">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Notification Toast -->
+    <div class="notification-toast" id="notificationToast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span class="toast-message">Item added to cart!</span>
+        </div>
+    </div>
+
+    <script src="scripts-new.js"></script>
+    <script>
+        // Product filtering and view switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const viewBtns = document.querySelectorAll('.view-btn');
+            const productsGrid = document.getElementById('productsGrid');
+            const productItems = document.querySelectorAll('.product-item');
+            const resultsCount = document.getElementById('resultsCount');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+            let visibleProducts = 9;
+            let currentFilter = 'all';
+
+            // Filter functionality
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    currentFilter = this.getAttribute('data-filter');
+                    filterProducts();
+                });
+            });
+
+            // View toggle functionality
+            viewBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    viewBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const view = this.getAttribute('data-view');
+                    toggleView(view);
+                });
+            });
+
+            function filterProducts() {
+                let visibleCount = 0;
+                
+                productItems.forEach((item, index) => {
+                    const category = item.getAttribute('data-category');
+                    const shouldShow = currentFilter === 'all' || category === currentFilter;
+                    
+                    if (shouldShow && visibleCount < visibleProducts) {
+                        item.style.display = 'block';
+                        item.style.animationDelay = (visibleCount * 0.1) + 's';
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                resultsCount.textContent = visibleCount;
+                
+                // Show/hide load more button
+                const totalFilteredProducts = Array.from(productItems).filter(item => {
+                    const category = item.getAttribute('data-category');
+                    return currentFilter === 'all' || category === currentFilter;
+                }).length;
+                
+                loadMoreBtn.style.display = visibleCount < totalFilteredProducts ? 'block' : 'none';
+            }
+
+            function toggleView(view) {
+                if (view === 'list') {
+                    productsGrid.classList.add('list-view');
+                    productItems.forEach(item => item.classList.add('list-view'));
+                } else {
+                    productsGrid.classList.remove('list-view');
+                    productItems.forEach(item => item.classList.remove('list-view'));
+                }
+            }
+
+            // Load more functionality
+            loadMoreBtn.addEventListener('click', function() {
+                visibleProducts += 6;
+                filterProducts();
+            });
+
+            // Product action handlers
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.overlay-btn')) {
+                    const btn = e.target.closest('.overlay-btn');
+                    const action = btn.getAttribute('data-action');
+                    const productTitle = btn.closest('.product-item').querySelector('.product-title').textContent;
+                    
+                    switch(action) {
+                        case 'quick-view':
+                            showNotification(`Quick view for ${productTitle} - Feature coming soon!`, 'info');
+                            break;
+                        case 'favorite':
+                            const icon = btn.querySelector('i');
+                            if (icon.classList.contains('far')) {
+                                icon.classList.remove('far');
+                                icon.classList.add('fas');
+                                showNotification(`${productTitle} added to favorites`, 'success');
+                            } else {
+                                icon.classList.remove('fas');
+                                icon.classList.add('far');
+                                showNotification(`${productTitle} removed from favorites`, 'info');
+                            }
+                            break;
+                        case 'inquiry':
+                            const message = `Hello! I'm interested in the ${productTitle}. Could you please provide more information about pricing, customization options, and availability?`;
+                            const whatsappURL = `https://wa.me/254707702773?text=${encodeURIComponent(message)}`;
+                            window.open(whatsappURL, '_blank');
+                            break;
+                    }
+                }
+            });
+
+            // Initialize
+            filterProducts();
+        });
+
+        // Notification function (if not already defined in main script)
+        function showNotification(message, type = 'info') {
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notification => notification.remove());
+            
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <span>${message}</span>
+                    <button class="notification-close">&times;</button>
+                </div>
+            `;
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? '#d4af37' : type === 'error' ? '#e74c3c' : '#3498db'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+                z-index: 10001;
+                transform: translateX(400px);
+                transition: transform 0.3s ease;
+                max-width: 300px;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            notification.querySelector('.notification-close').addEventListener('click', () => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => notification.remove(), 300);
+            });
+            
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.style.transform = 'translateX(400px)';
+                    setTimeout(() => notification.remove(), 300);
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | BMI Leather Art & Design</title>
+    <meta name="description" content="Discover the story behind BMI Leather Art & Design. Learn about our artisan heritage, sustainable practices, and commitment to exceptional leather craftsmanship.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Additional styles for about page */
+        .about-hero {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--soft-charcoal) 100%);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('bmi-logo.jpg') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .about-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .story-section {
+            padding: var(--section-padding);
+            background: var(--pure-white);
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .story-text h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-highlight {
+            background: var(--primary-cream);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            border-left: 4px solid var(--accent-gold);
+            margin: 2rem 0;
+        }
+
+        .story-highlight p {
+            margin: 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .story-visual {
+            position: relative;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--border-radius-lg);
+        }
+
+        .story-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--accent-gold);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .values-section {
+            padding: var(--section-padding);
+            background: var(--secondary-cream);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--accent-gold);
+            font-size: 2rem;
+        }
+
+        .value-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .process-section {
+            padding: var(--section-padding);
+            background: var(--pure-white);
+        }
+
+        .process-timeline {
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--warm-taupe);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .step-content {
+            flex: 1;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            margin: 0 2rem;
+            position: relative;
+        }
+
+        .step-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            transform: translateY(-50%);
+        }
+
+        .process-step:nth-child(odd) .step-content::before {
+            right: -20px;
+            border-left-color: white;
+        }
+
+        .process-step:nth-child(even) .step-content::before {
+            left: -20px;
+            border-right-color: white;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gold);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .step-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .team-section {
+            padding: var(--section-padding);
+            background: var(--primary-cream);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .team-name {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: var(--accent-gold);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .team-description {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .sustainability-section {
+            padding: var(--section-padding);
+            background: var(--secondary-cream);
+        }
+
+        .sustainability-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .sustainability-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sustainability-features li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--warm-taupe);
+        }
+
+        .sustainability-features li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gold);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cta-section {
+            padding: var(--section-padding);
+            background: var(--charcoal);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 1024px) {
+            .story-content,
+            .sustainability-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .timeline-line {
+                left: 30px;
+            }
+
+            .process-step,
+            .process-step:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .step-content {
+                margin-left: 4rem;
+                margin-right: 0;
+            }
+
+            .step-content::before,
+            .process-step:nth-child(even) .step-content::before {
+                left: -20px;
+                right: auto;
+                border-right-color: white;
+                border-left-color: transparent;
+            }
+
+            .step-number {
+                position: absolute;
+                left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                height: 50vh;
+            }
+
+            .values-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                margin-bottom: 2rem;
+            }
+
+            .step-content {
+                margin-left: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index-new.html" class="logo-link">
+                    <img src="bmi-logo.jpg" alt="BMI Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="brand-name">BMI Leather</span>
+                        <span class="brand-tagline">Art & Design</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="index-new.html" class="nav-link">Home</a></li>
+                    <li><a href="about-new.html" class="nav-link active">About</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="services-new.html" class="nav-link">Services</a></li>
+                    <li><a href="contact-new.html" class="nav-link">Contact</a></li>
+                    <li><a href="order-tracking.html" class="nav-link">Track Order</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="inquiry-btn">Get Quote</button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>Our Story</h1>
+            <p>Where tradition meets innovation, and every stitch tells a story of passion, craftsmanship, and unwavering commitment to excellence.</p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Crafting Excellence Since 2010</h2>
+                    <p>BMI Leather Art & Design was born from a simple yet profound belief: that in our increasingly digital world, there's something irreplaceably valuable about objects made by human hands with care, skill, and attention to detail.</p>
+                    
+                    <p>Our journey began in the vibrant workshops of Nairobi, Kenya, where traditional leather crafting techniques have been passed down through generations. We recognized the opportunity to preserve these time-honored methods while creating contemporary designs that speak to modern sensibilities.</p>
+                    
+                    <div class="story-highlight">
+                        <p>"Every piece we create is not just a product, but a testament to the enduring power of human creativity and the timeless appeal of authentic craftsmanship."</p>
+                    </div>
+                </div>
+                <div class="story-visual">
+                    <img src="bmi-logo.jpg" alt="BMI Leather Artisan Workshop" class="story-image">
+                    <div class="story-badge">
+                        <div>15+</div>
+                        <div style="font-size: 0.8rem;">Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Our Foundation</span>
+                <h2 class="section-title">Values That Guide Us</h2>
+                <p class="section-description">These core principles shape every decision we make and every piece we create, ensuring that our work reflects not just skill, but also integrity and purpose.</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Passion for Craft</h3>
+                    <p>Our love for leather artistry drives us to constantly push boundaries and explore new possibilities while respecting traditional techniques.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Practices</h3>
+                    <p>We're committed to environmental responsibility, sourcing materials ethically and implementing eco-conscious processes throughout our workflow.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Uncompromising Quality</h3>
+                    <p>Every piece undergoes rigorous quality control, ensuring that our customers receive products that will last for decades, not just seasons.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Focus</h3>
+                    <p>We believe in supporting local artisans and communities, creating opportunities and preserving traditional skills for future generations.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation & Tradition</h3>
+                    <p>We seamlessly blend time-tested techniques with contemporary design thinking, creating pieces that honor the past while embracing the future.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Personal Service</h3>
+                    <p>Each customer relationship is valued and nurtured, with personalized service that ensures every interaction exceeds expectations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">How We Work</span>
+                <h2 class="section-title">Our Crafting Process</h2>
+                <p class="section-description">From concept to completion, every step in our process is carefully executed to ensure exceptional results.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Design & Consultation</h3>
+                        <p>We begin with understanding your vision, discussing requirements, and creating detailed design sketches that capture your unique style and functional needs.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Material Selection</h3>
+                        <p>Only the finest, ethically-sourced leather is chosen for each project. We carefully select materials based on the intended use, aesthetic preferences, and durability requirements.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Pattern Making</h3>
+                        <p>Precise patterns are created and tested to ensure perfect fit and function. This critical step determines the final proportions and structural integrity of the piece.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Cutting & Preparation</h3>
+                        <p>Each piece is carefully cut by hand, with attention to grain direction and hide characteristics. This ensures optimal strength and beautiful aging over time.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Assembly & Stitching</h3>
+                        <p>Master craftsmen assemble and stitch each piece using traditional techniques and premium threads, ensuring both beauty and longevity in every seam.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Finishing & Quality Control</h3>
+                        <p>Final finishing touches are applied, including edge work, conditioning, and detailed quality inspection to ensure each piece meets our exacting standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Meet Our Team</span>
+                <h2 class="section-title">The Artisans Behind the Art</h2>
+                <p class="section-description">Our passionate team of skilled craftspeople brings decades of combined experience and unwavering dedication to every project.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="bmi-logo.jpg" alt="Master Artisan" class="team-image">
+                    <div class="team-info">
+                        <h3 class="team-name">Bernard Mwangi</h3>
+                        <p class="team-role">Founder & Master Craftsman</p>
+                        <p class="team-description">With over 20 years of experience, Bernard leads our team with a vision to preserve traditional leather crafting while embracing innovative design.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="bmi-logo.jpg" alt="Design Director" class="team-image">
+                    <div class="team-info">
+                        <h3 class="team-name">Mary Wanjiku</h3>
+                        <p class="team-role">Design Director</p>
+                        <p class="team-description">Mary brings a contemporary aesthetic to our traditional crafts, ensuring each piece speaks to modern sensibilities while honoring heritage.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="bmi-logo.jpg" alt="Senior Artisan" class="team-image">
+                    <div class="team-info">
+                        <h3 class="team-name">Joseph Kimani</h3>
+                        <p class="team-role">Senior Artisan</p>
+                        <p class="team-description">A master of traditional stitching techniques, Joseph's precise handwork ensures every piece meets our highest quality standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="sustainability-section">
+        <div class="container">
+            <div class="sustainability-content">
+                <div>
+                    <div class="section-header">
+                        <span class="section-subtitle">Our Commitment</span>
+                        <h2 class="section-title">Sustainable Craftsmanship</h2>
+                    </div>
+                    <p>We believe that true luxury comes from creating beautiful objects that don't compromise our planet's future. Our commitment to sustainability is woven into every aspect of our business.</p>
+                    
+                    <ul class="sustainability-features">
+                        <li>
+                            <div class="feature-icon">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <div>
+                                <strong>Ethically Sourced Materials</strong><br>
+                                All leather is sourced from suppliers who adhere to strict environmental and ethical standards.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <div>
+                                <strong>Water Conservation</strong><br>
+                                We use eco-friendly tanning processes that minimize water usage and eliminate harmful chemicals.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div>
+                                <strong>Zero Waste Philosophy</strong><br>
+                                Leather scraps are repurposed into smaller accessories, ensuring minimal material waste.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <div>
+                                <strong>Community Support</strong><br>
+                                We support local communities by providing fair wages and skills training opportunities.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="story-visual">
+                    <img src="bmi-logo.jpg" alt="Sustainable Practices" class="story-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Create Something Special?</h2>
+                <p>Let's collaborate to bring your vision to life with our expertise and passion for exceptional leather craftsmanship.</p>
+                <div class="cta-buttons">
+                    <a href="contact-new.html" class="btn-primary">Start Your Project</a>
+                    <a href="product-new.html" class="btn-secondary">View Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="bmi-logo.jpg" alt="BMI Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-brand-name">BMI Leather</span>
+                            <span class="footer-brand-tagline">Art & Design</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Crafting exceptional leather goods that blend traditional artisanship with contemporary design.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bmileather" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bmi_leather_art_and_design" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.threads.net/@bmi_leather_art_and_design" target="_blank" class="social-link">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                        <a href="https://wa.me/254707702773" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index-new.html">Home</a></li>
+                        <li><a href="about-new.html">About</a></li>
+                        <li><a href="product-new.html">Collections</a></li>
+                        <li><a href="services-new.html">Services</a></li>
+                        <li><a href="contact-new.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Our Values</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Quality Craftsmanship</a></li>
+                        <li><a href="#">Sustainable Practices</a></li>
+                        <li><a href="#">Community Support</a></li>
+                        <li><a href="#">Innovation & Tradition</a></li>
+                        <li><a href="#">Personal Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-methods" style="color: rgba(255, 255, 255, 0.8);">
+                        <div class="contact-method" style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-phone" style="margin-right: 0.5rem;"></i>
+                            <span>+254 707 702 773</span>
+                        </div>
+                        <div class="contact-method" style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                            <span>info@bmileatherart.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
+                            <span>Nairobi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 BMI Leather Art & Design. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Return Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="scripts-new.js"></script>
+    <script>
+        // Additional animations for about page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate value cards on scroll
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe value cards
+            const valueCards = document.querySelectorAll('.value-card');
+            valueCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Observe team cards
+            const teamCards = document.querySelectorAll('.team-card');
+            teamCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Observe process steps
+            const processSteps = document.querySelectorAll('.process-step');
+            processSteps.forEach(step => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateX(-30px)';
+                step.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(step);
+            });
+
+            // Counter animation for stats
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const finalValue = parseInt(stat.textContent);
+                const duration = 2000;
+                const step = finalValue / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= finalValue) {
+                        current = finalValue;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
+                }, 16);
+            });
+        });
+    </script>
+</body>
+</html>

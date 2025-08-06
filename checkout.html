@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | BMI Leather Art & Design</title>
+    <meta name="description" content="Complete your order securely with BMI Leather Art & Design. Premium handcrafted leather goods with fast delivery across Kenya.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Checkout page specific styles */
+        .checkout-hero {
+            padding: 120px 0 40px;
+            background: var(--primary-cream);
+            text-align: center;
+        }
+
+        .checkout-hero h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .checkout-breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb-item.active {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-light);
+        }
+
+        .checkout-main {
+            padding: 3rem 0;
+            background: var(--pure-white);
+        }
+
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .checkout-form {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--warm-taupe);
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+        }
+
+        .form-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--warm-taupe);
+            padding-bottom: 0.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--warm-taupe);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            background: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--warm-taupe);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--warm-taupe);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 80px;
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .payment-method {
+            border: 2px solid var(--warm-taupe);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            background: white;
+        }
+
+        .payment-method:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .payment-method.selected {
+            border-color: var(--accent-gold);
+            background: var(--primary-cream);
+        }
+
+        .payment-method i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-gold);
+        }
+
+        .payment-method span {
+            display: block;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .order-summary {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--warm-taupe);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .summary-header {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--warm-taupe);
+            padding-bottom: 0.5rem;
+        }
+
+        .order-items {
+            margin-bottom: 1.5rem;
+        }
+
+        .order-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--warm-taupe);
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .item-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .item-category {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-quantity {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .item-price {
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .order-totals {
+            border-top: 2px solid var(--warm-taupe);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .total-final {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            border-top: 1px solid var(--warm-taupe);
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .place-order-btn {
+            background: var(--accent-gold);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .place-order-btn:hover {
+            background: var(--accent-bronze);
+            transform: translateY(-2px);
+        }
+
+        .place-order-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .security-info {
+            background: var(--primary-cream);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+            border: 1px solid var(--warm-taupe);
+        }
+
+        .security-info i {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .security-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .promo-code {
+            border: 1px solid var(--warm-taupe);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .promo-input {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .promo-input input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid var(--warm-taupe);
+            border-radius: var(--border-radius);
+        }
+
+        .apply-promo-btn {
+            background: var(--accent-gold);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .apply-promo-btn:hover {
+            background: var(--accent-bronze);
+        }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .order-summary {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .checkout-form,
+            .order-summary {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index-new.html" class="logo-link">
+                    <img src="bmi-logo.jpg" alt="BMI Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="brand-name">BMI Leather</span>
+                        <span class="brand-tagline">Art & Design</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="index-new.html" class="nav-link">Home</a></li>
+                    <li><a href="about-new.html" class="nav-link">About</a></li>
+                    <li><a href="product-new.html" class="nav-link">Shop</a></li>
+                    <li><a href="services-new.html" class="nav-link">Services</a></li>
+                    <li><a href="contact-new.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button class="inquiry-btn">Get Quote</button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Hero -->
+    <section class="checkout-hero">
+        <div class="container">
+            <h1>Secure Checkout</h1>
+            <div class="checkout-breadcrumb">
+                <div class="breadcrumb-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                </div>
+                <i class="fas fa-chevron-right breadcrumb-separator"></i>
+                <div class="breadcrumb-item active">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Checkout</span>
+                </div>
+                <i class="fas fa-chevron-right breadcrumb-separator"></i>
+                <div class="breadcrumb-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Complete</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Main -->
+    <section class="checkout-main">
+        <div class="checkout-container">
+            <!-- Checkout Form -->
+            <div class="checkout-form">
+                <form id="checkoutForm">
+                    <!-- Billing Information -->
+                    <div class="form-section">
+                        <h3>Billing Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+254 700 000 000" required>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Address -->
+                    <div class="form-section">
+                        <h3>Shipping Address</h3>
+                        <div class="form-group">
+                            <label class="form-label" for="address">Street Address <span class="required">*</span></label>
+                            <input type="text" id="address" name="address" class="form-input" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="city">City <span class="required">*</span></label>
+                                <input type="text" id="city" name="city" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="county">County <span class="required">*</span></label>
+                                <select id="county" name="county" class="form-select" required>
+                                    <option value="">Select County</option>
+                                    <option value="nairobi">Nairobi</option>
+                                    <option value="mombasa">Mombasa</option>
+                                    <option value="kisumu">Kisumu</option>
+                                    <option value="nakuru">Nakuru</option>
+                                    <option value="eldoret">Eldoret</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="postalCode">Postal Code</label>
+                            <input type="text" id="postalCode" name="postalCode" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="deliveryNotes">Delivery Instructions</label>
+                            <textarea id="deliveryNotes" name="deliveryNotes" class="form-textarea" placeholder="Any special delivery instructions..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="form-section">
+                        <h3>Payment Method</h3>
+                        <div class="payment-methods">
+                            <div class="payment-method selected" data-method="mpesa">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>M-Pesa</span>
+                            </div>
+                            <div class="payment-method" data-method="card">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Credit Card</span>
+                            </div>
+                            <div class="payment-method" data-method="bank">
+                                <i class="fas fa-university"></i>
+                                <span>Bank Transfer</span>
+                            </div>
+                            <div class="payment-method" data-method="cod">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <span>Cash on Delivery</span>
+                            </div>
+                        </div>
+
+                        <!-- M-Pesa Details -->
+                        <div id="mpesaDetails" class="payment-details" style="margin-top: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label" for="mpesaNumber">M-Pesa Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="mpesaNumber" name="mpesaNumber" class="form-input" placeholder="+254 700 000 000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Notes -->
+                    <div class="form-section">
+                        <h3>Order Notes</h3>
+                        <div class="form-group">
+                            <label class="form-label" for="orderNotes">Additional Notes</label>
+                            <textarea id="orderNotes" name="orderNotes" class="form-textarea" placeholder="Any special requests or customizations..."></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h3 class="summary-header">Order Summary</h3>
+                
+                <!-- Promo Code -->
+                <div class="promo-code">
+                    <div class="promo-input">
+                        <input type="text" placeholder="Promo code" id="promoCode">
+                        <button type="button" class="apply-promo-btn" id="applyPromo">Apply</button>
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <div class="order-items" id="orderItems">
+                    <div class="order-item">
+                        <img src="images/1.jpg" alt="Executive Pen Holder" class="item-image">
+                        <div class="item-details">
+                            <div class="item-title">Executive Pen Holder</div>
+                            <div class="item-category">Office Accessories</div>
+                            <div class="item-quantity">Qty: 1</div>
+                        </div>
+                        <div class="item-price">KES 11,050</div>
+                    </div>
+                    <div class="order-item">
+                        <img src="images/3.jpg" alt="Artisan Watch Strap" class="item-image">
+                        <div class="item-details">
+                            <div class="item-title">Artisan Watch Strap</div>
+                            <div class="item-category">Accessories</div>
+                            <div class="item-quantity">Qty: 2</div>
+                        </div>
+                        <div class="item-price">KES 11,700</div>
+                    </div>
+                </div>
+
+                <!-- Order Totals -->
+                <div class="order-totals">
+                    <div class="total-row">
+                        <span>Subtotal:</span>
+                        <span id="orderSubtotal">KES 22,750</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Shipping:</span>
+                        <span id="orderShipping">KES 500</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Tax (VAT 16%):</span>
+                        <span id="orderTax">KES 3,720</span>
+                    </div>
+                    <div class="total-row total-final">
+                        <span>Total:</span>
+                        <span id="orderTotal">KES 26,970</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="place-order-btn" id="placeOrderBtn" form="checkoutForm">
+                    <i class="fas fa-lock"></i>
+                    Place Order
+                </button>
+
+                <div class="security-info">
+                    <i class="fas fa-shield-alt"></i>
+                    <p>Your payment information is secure and encrypted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="bmi-logo.jpg" alt="BMI Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-brand-name">BMI Leather</span>
+                            <span class="footer-brand-tagline">Art & Design</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Crafting exceptional leather goods that blend traditional artisanship with contemporary design.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index-new.html">Home</a></li>
+                        <li><a href="about-new.html">About</a></li>
+                        <li><a href="product-new.html">Shop</a></li>
+                        <li><a href="services-new.html">Services</a></li>
+                        <li><a href="contact-new.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-methods" style="color: rgba(255, 255, 255, 0.8);">
+                        <div class="contact-method" style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-phone" style="margin-right: 0.5rem;"></i>
+                            <span>+254 707 702 773</span>
+                        </div>
+                        <div class="contact-method" style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                            <span>info@bmileatherart.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
+                            <span>Nairobi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 BMI Leather Art & Design. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Return Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts-new.js"></script>
+    <script>
+        // Checkout functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const paymentMethods = document.querySelectorAll('.payment-method');
+            const checkoutForm = document.getElementById('checkoutForm');
+            const placeOrderBtn = document.getElementById('placeOrderBtn');
+            
+            // Payment method selection
+            paymentMethods.forEach(method => {
+                method.addEventListener('click', () => {
+                    paymentMethods.forEach(m => m.classList.remove('selected'));
+                    method.classList.add('selected');
+                    
+                    // Show/hide payment details based on selected method
+                    const selectedMethod = method.dataset.method;
+                    const mpesaDetails = document.getElementById('mpesaDetails');
+                    
+                    if (selectedMethod === 'mpesa') {
+                        mpesaDetails.style.display = 'block';
+                    } else {
+                        mpesaDetails.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Form submission
+            checkoutForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Collect form data
+                const formData = new FormData(checkoutForm);
+                const selectedPayment = document.querySelector('.payment-method.selected').dataset.method;
+                
+                // Create order summary for WhatsApp
+                let orderMessage = `*New Order - BMI Leather Art & Design*\n\n`;
+                
+                // Customer Details
+                orderMessage += `*Customer Details:*\n`;
+                orderMessage += `Name: ${formData.get('firstName')} ${formData.get('lastName')}\n`;
+                orderMessage += `Email: ${formData.get('email')}\n`;
+                orderMessage += `Phone: ${formData.get('phone')}\n\n`;
+                
+                // Shipping Address
+                orderMessage += `*Shipping Address:*\n`;
+                orderMessage += `${formData.get('address')}\n`;
+                orderMessage += `${formData.get('city')}, ${formData.get('county')}\n`;
+                if (formData.get('postalCode')) {
+                    orderMessage += `Postal Code: ${formData.get('postalCode')}\n`;
+                }
+                if (formData.get('deliveryNotes')) {
+                    orderMessage += `Delivery Notes: ${formData.get('deliveryNotes')}\n`;
+                }
+                orderMessage += `\n`;
+                
+                // Order Items (get from cart or display)
+                orderMessage += `*Order Items:*\n`;
+                orderMessage += `• Executive Pen Holder - KES 11,050 x 1\n`;
+                orderMessage += `• Artisan Watch Strap - KES 5,850 x 2\n\n`;
+                
+                // Payment Method
+                orderMessage += `*Payment Method:* ${selectedPayment.toUpperCase()}\n`;
+                if (selectedPayment === 'mpesa' && formData.get('mpesaNumber')) {
+                    orderMessage += `M-Pesa Number: ${formData.get('mpesaNumber')}\n`;
+                }
+                orderMessage += `\n`;
+                
+                // Order Summary
+                orderMessage += `*Order Summary:*\n`;
+                orderMessage += `Subtotal: KES 22,750\n`;
+                orderMessage += `Shipping: KES 500\n`;
+                orderMessage += `Tax (VAT 16%): KES 3,720\n`;
+                orderMessage += `*Total: KES 26,970*\n\n`;
+                
+                if (formData.get('orderNotes')) {
+                    orderMessage += `*Special Notes:* ${formData.get('orderNotes')}\n\n`;
+                }
+                
+                orderMessage += `Please confirm this order and provide payment instructions.`;
+                
+                // Disable button and show loading
+                placeOrderBtn.disabled = true;
+                placeOrderBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                
+                // Simulate processing delay then redirect to WhatsApp
+                setTimeout(() => {
+                    const whatsappURL = `https://wa.me/254707702773?text=${encodeURIComponent(orderMessage)}`;
+                    window.open(whatsappURL, '_blank');
+                    
+                    // Reset button
+                    placeOrderBtn.disabled = false;
+                    placeOrderBtn.innerHTML = '<i class="fas fa-lock"></i> Place Order';
+                    
+                    // Show success message
+                    alert('Order submitted! You will be redirected to WhatsApp to complete your purchase.');
+                }, 2000);
+            });
+            
+            // Promo code functionality
+            const applyPromoBtn = document.getElementById('applyPromo');
+            const promoCodeInput = document.getElementById('promoCode');
+            
+            applyPromoBtn.addEventListener('click', () => {
+                const promoCode = promoCodeInput.value.trim().toUpperCase();
+                
+                if (promoCode === 'FIRST10') {
+                    alert('Promo code applied! 10% discount on your first order.');
+                    // Update totals here
+                } else if (promoCode === 'LEATHER20') {
+                    alert('Promo code applied! 20% discount on leather care services.');
+                } else if (promoCode) {
+                    alert('Invalid promo code. Please try again.');
+                }
+            });
+        });
+    </script>
+    <script src="scripts-new.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>
